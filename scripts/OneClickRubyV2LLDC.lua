@@ -1,0 +1,337 @@
+script_name = "One Click Ruby LLDC版"
+script_description = "Get the formatted lyrics by Yahoo's API and ruby them"
+script_author = "domo"
+ruby_part_from = "Kage Maboroshi&KiNen"
+script_version = "2.2m"
+
+require "karaskel"
+local request = require("luajit-request")
+local ffi = require"ffi"
+local utf8 = require"utf8"
+local json = require"json"
+-- local Y = require"Yutils"
+-- local tts = Y.table.tostring
+meta = nil;
+styles = nil;
+--Typesetting Parameters--
+rubypadding = 0 --extra spacing of ruby chars
+rubyscale = 0.5 --scale of ruby chars 
+
+--Separators--
+char_s = "##"  -- s(tart) of ruby part
+char_m = "|<"  -- m(iddle) which divides the whole part into kanji and furigana
+char_e = "##"  -- e(nd) of ruby part
+
+
+local function deleteEmpty(tbl)
+	for i=#tbl,1,-1 do
+		if tbl[i] == "" then
+		table.remove(tbl, i)
+		end
+	end
+	return tbl
+end
+
+function Split(szFullString, szSeparator)
+	local nFindStartIndex = 1
+	local nSplitIndex = 1
+	local nSplitArray = {}   
+	while true do
+		local nFindLastIndex = string.find(szFullString, szSeparator, nFindStartIndex)      
+		if not nFindLastIndex then
+			nSplitArray[nSplitIndex] = string.sub(szFullString, nFindStartIndex, string.len(szFullString))
+			break      
+		end
+		nSplitArray[nSplitIndex] = string.sub(szFullString, nFindStartIndex, nFindLastIndex - 1)
+		nFindStartIndex = nFindLastIndex + string.len(szSeparator)
+		nSplitIndex = nSplitIndex + 1
+	end
+return nSplitArray
+end
+
+function addK0BeforeText(s)
+    local result = ""
+    local i = 1
+    while i <= utf8.len(s) do
+        local charC = utf8.sub(s, i, i)
+        if charC == "{" then
+            local j = i
+            while utf8.sub(s, j, j) ~= "}" and j <= utf8.len(s) do
+                j = j + 1
+            end
+            result = result .. utf8.sub(s, i, j)
+            i = j + 1
+        else
+            if i == 1 or utf8.sub(s, i-1, i-1) ~= "}" then
+                result = result .. "{\\k0}"
+            end
+            result = result .. charC
+            i = i + 1
+        end
+    end
+    return result
+end
+
+local function send2YahooV2(sentence,appid,grade)
+	local url = "https://jlp.yahooapis.jp/FuriganaService/V2/furigana"
+	params = {["q"] = sentence,
+			  ["grade"] = grade}
+	data = {["id"] = "1234-1",
+			["jsonrpc"] = "2.0",
+			["method"] = "jlp.furiganaservice.furigana",
+			["params"] = params}
+	local result, err, message = request.send(url,{
+		method = "POST",
+		headers = {['content-type'] = "application/x-www-form-urlencoded",
+				   ["User-Agent"] = "Yahoo AppID: " .. appid},
+		data = json.encode(data)}
+		)
+	if (not result) then aegisub.debug.out(err, message) end
+	-- aegisub.debug.out(result.body)
+	return result.body
+end
+
+local function KaraText(newText,lineKara)
+	rubyTbl = deleteEmpty(Split(newText,char_s))
+	newRubyTbl = {}
+	for i=1,#rubyTbl do
+		if string.find(rubyTbl[i],char_m) then
+			newRubyTbl[#newRubyTbl+1] = rubyTbl[i]
+		else 
+			for j=1,utf8.len(rubyTbl[i]) do
+				newRubyTbl[#newRubyTbl+1] = utf8.sub(rubyTbl[i],j,j)
+			end
+		end
+	end
+	-- aegisub.debug.out(tts(newRubyTbl).."\n")
+	sylNum = #lineKara
+	for i=#newRubyTbl,2,-1 do
+		realWord = string.match(newRubyTbl[i],"([^|<]+)[<|]?")
+		if utf8.len(realWord)<utf8.len(lineKara[sylNum].sylText) then
+			newRubyTbl[i-1] = newRubyTbl[i-1]..newRubyTbl[i]
+			table.remove(newRubyTbl,i)
+			-- aegisub.debug.out(realWord.."|"..lineKara[sylNum].sylText.."\n")
+		else
+			sylNum = sylNum - 1
+		end
+	end
+	-- aegisub.debug.out(tts(newRubyTbl)..'\n')
+	tmpSylText = ""
+	tmpSylKDur = 0
+	i = 1
+	newKaraText = ""
+	while i<=#lineKara do
+		tmpSylText = tmpSylText..lineKara[i].sylText
+		tmpSylKDur = tmpSylKDur + lineKara[i].kDur
+		table.remove(lineKara,1)
+		realWord = string.match(newRubyTbl[i],"([^|<]+)[<|]?")
+		-- aegisub.debug.out('\n'..tostring(tmpSylKDur)..tmpSylText.."    "..realWord)
+		if tmpSylText == realWord then
+			if tmpSylKDur == 0 then
+				newKaraText = newKaraText..newRubyTbl[i]
+			else
+				newKaraText = newKaraText..string.format("{\\k%d}%s",tmpSylKDur,newRubyTbl[i])
+			end
+			table.remove(newRubyTbl,i)
+			tmpSylText = ""
+			tmpSylKDur = 0
+		end
+		-- aegisub.debug.out('\n'..newKaraText)
+	end
+	return newKaraText
+end
+
+local function parse_templates(meta, styles, subs)
+	local i = 1
+	while i <= #subs do
+		aegisub.progress.set((i-1) / #subs * 100)
+		local l = subs[i]
+		i = i + 1
+		if l.class == "dialogue" and l.effect == "furi-fx" then
+			-- this is a previously generated effect line, remove it
+			i = i - 1
+			subs.delete(i)
+		end
+	end
+	aegisub.progress.set(100)
+end
+
+local function processline(subs,line,li)
+    line.comment = false;
+	local originline = table.copy(line);
+	
+	local ktag="{\\k0}";
+	local stylefs = styles[ line.style ].fontsize;
+	local rubbyfs = stylefs * rubyscale;
+	if string.find(line.text,char_s.."(.-)"..char_m.."(.-)"..char_e) ~= nil then
+		if (char_s == "("  and char_m == "," and char_e == ")") then
+			line.text = string.gsub(line.text,"%((.-),(.-)%)",ktag.."%1".."|".."%2"..ktag);
+			-- aegisub.debug.out(line.text);
+		elseif (char_s == "" and char_m == "(" and char_e == ")") then
+			line.text = string.gsub(line.text,"(^[ぁ-ゖ]+)%(([ぁ-ゖ]+)%)^[ぁ-ゖ]+",ktag.."%1".."|".."%2"..ktag);
+			-- aegisub.debug.out(line.text);
+		else
+			line.text = string.gsub(line.text,char_s.."(.-)"..char_m.."(.-)"..char_e,ktag.."%1".."|".."%2"..ktag);
+			-- aegisub.debug.out(line.text);
+		end
+	
+		local vl = table.copy(line);
+			karaskel.preproc_line(subs, meta, styles, vl);
+	
+		if (char_s == "("  and char_m == "," and char_e == ")") then
+			originline.text = string.gsub(originline.text,"%((.-),(.-)%)","%1");
+		elseif (char_s == "" and char_m == "(" and char_e == ")") then
+			originline.text = string.gsub(originline.text,"(^[ぁ-ゖ]+)%(([ぁ-ゖ]+)%)","%1");
+		else
+			originline.text = string.gsub(originline.text,char_s.."(.-)"..char_m.."(.-)"..char_e,"%1");
+		end
+	
+		originline.text = string.format("{\\pos(%d,%d)}",vl.x,vl.y)..originline.text;
+		originline.effect = "furi-fx"
+		subs.append(originline);
+
+		-- for i = 1, vl.furi.n do
+		-- 	local fl = table.copy(line)
+		-- 	local rlx = vl.left + vl.kara[vl.furi[i].i].center;
+		-- 	local rly = vl.top - rubbyfs/2 - rubypadding;
+		-- 	fl.text = string.format("{\\an5\\fs%d\\pos(%d,%d)}%s",rubbyfs,rlx,rly,vl.furi[i].text);
+		-- 	fl.effect = "furi-fx"
+		-- 	subs.append(fl);
+		-- end
+	else
+	subs.append(originline);
+	-- aegisub.debug.out("a");
+	end
+end
+
+local function Ruby(subs, sel)
+	meta, styles = karaskel.collect_head(subs);
+	for i=1,#sel do
+		processline(subs,sel[i],i);
+	end
+	aegisub.set_undo_point(script_name) 
+end
+
+
+local function json2LineText(jsonStr,lineNum)
+	lineText = ""
+	-- json error handle
+	if json.decode(jsonStr).error then return "" end
+				-- aegisub.debug.out(jsonStr)
+	wordTbl = json.decode(jsonStr).result.word
+	if wordTbl.furigana and wordTbl.furigana~=wordTbl.surface then
+		if wordTbl.subword then
+			subTbl = wordTbl.subword
+			for i=1,#subTbl do
+				if subTbl[i].surface~=subTbl[i].furigana then
+					lineText = lineText..char_s..subTbl[i].surface..char_m..subTbl[i].furigana..char_e
+				else
+					lineText = lineText..subTbl[i].surface
+				end
+			end
+		else
+			lineText = lineText..char_s..wordTbl.surface..char_m..wordTbl.furigana..char_e
+		end
+	else --Multiple Words
+		for i=1,#wordTbl do
+			if wordTbl[i].furigana and wordTbl[i].furigana~=wordTbl[i].surface and utf8.match(wordTbl[i].surface, "[ァ-ヶ]") == nil then
+				if wordTbl[i].subword then 
+					subTbl = wordTbl[i].subword
+					for i=1,#subTbl do
+						if subTbl[i].surface~=subTbl[i].furigana then
+							lineText = lineText..char_s..subTbl[i].surface..char_m..subTbl[i].furigana..char_e
+						else
+							lineText = lineText..subTbl[i].surface
+						end
+					end
+				else
+					local n1 = #wordTbl[i].furigana
+					local n2 = #wordTbl[i].surface
+					for j = 1, n2, 3 do
+						if j+2==n2 then
+							lineText = lineText..char_s..wordTbl[i].surface:sub(j, j + 2)..char_m..wordTbl[i].furigana:sub(j, n1)..char_e
+					    else
+							lineText = lineText..char_s..wordTbl[i].surface:sub(j, j + 2)..char_m..wordTbl[i].furigana:sub(j, j+2)..char_e
+						end
+					end
+					-- lineText = lineText..char_s..wordTbl[i].surface..char_m..wordTbl[i].furigana..char_e
+					-- aegisub.debug.out(tostring(utf8.len(wordTbl[i].surface)))
+					-- aegisub.debug.out(string.sub(wordTbl[i].surface,1,3).."a")
+					-- aegisub.debug.out(utf8.char(utf8.codes(wordTbl[i].surface)[2]))					
+				end
+			else
+				lineText = lineText..wordTbl[i].surface
+			end
+		end
+	end
+	return lineText
+end
+
+
+function oneClickRuby(subtitles, selected_lines)
+	local grade = "1" --1~6 correspond to Japan primary school student grade, 7 for middle school and 8 for normal people.
+ 	local appid = "dj00aiZpPVZKRHFzZHY4Y3RtaSZzPWNvbnN1bWVyc2VjcmV0Jng9Zjg-" --suggest to change to your own appid.
+	for i=1,#subtitles do
+		if subtitles[i].class=="dialogue" then
+			dialogue_start = i - 1
+			break
+		end
+	end
+	newLineTbl = {}
+	for i=1,#selected_lines do
+		lineNum = tostring(selected_lines[i]-dialogue_start)
+		l = subtitles[selected_lines[i]]
+		orgText = l.text
+		-- aegisub.debug.out(orgText)
+		l.comment = true
+		subtitles[selected_lines[i]] = l
+		text = orgText:gsub("{[^}]+}", "")
+		if string.find(orgText,"{\\[kK]%d+}") then
+			aegisub.debug.out("Process line "..lineNum.." as a karaoke line.\n")
+			orgText = addK0BeforeText(l.text)
+			if orgText~=l.text then 
+				aegisub.debug.out("[WARNING] {\\k0} was generated for syllable with multiple characters.\n")
+			end
+			lineKara = {}
+			for kDur,sylText in string.gmatch(orgText,"{\\[kK](%d+)}([^{]+)") do
+				lineKara[#lineKara+1] = {sylText=sylText,kDur=kDur}
+			end
+			aegisub.progress.task("Requesting for line: "..lineNum)
+			result = send2YahooV2(text,appid,grade)
+			aegisub.progress.task("Parsing for line: "..lineNum)
+			newText = json2LineText(result,lineNum)
+			-- newText = xml2LineText(result,lineNum)
+			if type(newText)=="string" and newText~="" then
+				newText = KaraText(newText,lineKara)
+			else
+				newText = orgText
+			end
+			l.effect = "karaoke"
+		elseif string.find(text,char_m) then
+			newText = text
+			l.effect = "ruby"
+		else
+			aegisub.progress.task("Requesting for line: "..lineNum)
+			result = send2YahooV2(text,appid,grade)
+			aegisub.progress.task("Parsing for line: "..lineNum)
+			newText = json2LineText(result,lineNum)
+			l.effect = "ruby"
+		end
+		-- newText = xml2KaraLineText(result,line_table or key_value,lineNum)
+		aegisub.progress.task("Writing for line: "..lineNum)
+		if newText ~= "" then
+			l.text = newText
+		else
+			l.text = orgText
+		end
+		l.comment = false
+		newLineTbl[#newLineTbl+1] = l
+		aegisub.progress.set(i/#selected_lines*100)
+	end
+	-- uncomment this if you have the demand to use the raw format
+	-- subtitles.append(table.unpack(newLineTbl))
+	Ruby(subtitles, newLineTbl)
+	aegisub.debug.out("Done.")
+end
+
+aegisub.register_macro(script_name, script_description, oneClickRuby)

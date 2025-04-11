@@ -49,7 +49,7 @@ def lrc2ass(lrc_string, posttime = 20):
 
 def partwk_process(assstr):
     newnums = ['①', '②', '③', '④', '⑤', '⑥', '⑦', '⑧', '⑨']
-    speakers = ['初音未来', '星乃一歌', '天马咲希', '望月穗波', '日野森志步', '初音未来;星乃一歌', '星乃一歌;日野森志步', '初音未来;星乃一歌;日野森志步']
+    speakers = '初音未来；星乃一歌；天马咲希；望月穗波；日野森志步；初音未来、星乃一歌；星乃一歌、日野森志步；初音未来、星乃一歌、日野森志步'.replace('、',';').split('；')
     for i in range(len(speakers)):
         assstr = assstr.replace(newnums[i], r'{\-'+speakers[i]+'}')
     return re.sub(r'{\\-([^\\{}]+)}{\\k(-?\d+\.?\d*)}', r'{\\k\2}{\\-\1}', assstr)

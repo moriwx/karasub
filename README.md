@@ -1,6 +1,13 @@
 # karasub
 Some self-made Karaoke subtitles
 
+## Python脚本使用说明
+`ass2lrc.py` 将.ass转为.lrc（春日向け），支持处理連結、可选择是否保留分词
+`lrc2ass.py` 将.lrc（春日向け）转为.ass，暂不支持处理連結
+`partwkmg.py` 自动解析萌娘百科编辑界面歌词分部信息，暂不支持带注音假名歌词
+暂缺`partwkprskf.py` Project SEKAI Wiki (Fandom)
+暂缺`partwkvclf.py` Vocaloid Wiki (Fandom)
+
 ## FFmpeg Commands potentially helpful:
 ```
 ffmpeg -i '.\1.mp4' -t 27.58 -b:a 320k 2758.mp4

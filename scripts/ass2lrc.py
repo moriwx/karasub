@@ -22,7 +22,7 @@ def ass2lrc(ass_txt, partwk = True, partwk_logocs = 0, tail = False):
     assert len(parts) == 10, "此行属性有缺失！"
     start_cs = ass_time_to_cs(parts[1].strip())
     if partwk: # 暂未实现注音处分词
-        speaker = '【'+parts[4]+'】'
+        speaker = '【'+parts[4]+'】' if parts[4]!='' else ''
         content = re.sub(r'{\\k(-?\d+\.?\d*)}{\\-([^\\{}]+)}([^{])', r'{\\-\2}{\\k\1}\3', parts[9])
         content = re.sub(r'{\\k(-?\d+\.?\d*)\\-([^\\{}]+)}', r'{\\-\2}{\\k\1}', content)
         content = re.sub(r'{\\-([^\\{}]+)\\k(-?\d+\.?\d*)}', r'{\\-\1}{\\k\2}', content)
@@ -31,6 +31,7 @@ def ass2lrc(ass_txt, partwk = True, partwk_logocs = 0, tail = False):
     else:
         speaker = ''
         content = re.sub(r'\\-[^{}\\]+', '', re.sub(r'{\\-[^{}\\]+}', '', parts[9]))
+        content = re.sub(r'{\\pos[^{}\\]+}', '', content) # vmoe位置信息处理
     t1 = re.split(r'{\\k(-?\d+\.?\d*)}', content)
     assert '#' not in t1[0], "此行首个k值前含有#号！"
     mojiraw = [t1[i] for i in range(0, len(t1), 2)]

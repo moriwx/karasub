@@ -6,6 +6,10 @@ Some self-made Karaoke subtitles
 
 `lrc2ass.py` 将.lrc（春日向け）转为.ass，暂不支持处理連結
 
+`haruraw2norm.py` 将已注音未打轴的.lrc（春日向け）转为字典，用以入模对齐
+
+`norm2ass.py` 将模型输出的字典转为.ass格式，支持两种方式
+
 `partwkmg.py` 自动解析萌娘百科编辑界面歌词分部信息，暂不支持带注音假名歌词
 
 暂缺`partwkprskf.py` Project SEKAI Wiki (Fandom)

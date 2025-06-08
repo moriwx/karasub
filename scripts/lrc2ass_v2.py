@@ -31,7 +31,7 @@ def lrc2ass(lrc_string, pretime = 20, posttime = 20):
     mojinew = [''] * len(mojiraw)
     furistatus = [0] * len(mojiraw) # 默认无注音
     for i in range(len(mojiraw)):
-        if  '{' in mojiraw[i]:
+        if '{' in mojiraw[i]:
             furistatus[i+1] = 1
         elif furistatus[i]>=1 and '}' not in mojiraw[i]:
             furistatus[i+1] = 2

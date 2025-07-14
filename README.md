@@ -12,7 +12,7 @@ Some self-made Karaoke subtitles
 
 `partwkmg.py` 自动解析萌娘百科编辑界面歌词分部信息，暂不支持带注音假名歌词
 
-暂缺`partwkprskf.py` Project SEKAI Wiki (Fandom)
+`partwkprskf.py` 自动解析Project SEKAI Wiki (Fandom)编辑界面歌词分部信息
 
 暂缺`partwkvclf.py` Vocaloid Wiki (Fandom)
 

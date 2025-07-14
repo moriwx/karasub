@@ -19,7 +19,7 @@ def countdown_str(starttime, bpm, symbol='●', num=4):
         starttime = lrctime2int(*re.findall(r'(\d+):(\d+):(\d+)', starttime)[0])
     timelst = []
     for i in range(num+1):
-        timelst.append(cs_to_lrc_time(round(starttime-i*t)))
+        timelst.append(cs_to_lrc_time(round(max(starttime-i*t,0))))
     return symbol.join(timelst)
 
 if __name__=='__main__':
@@ -29,7 +29,10 @@ if __name__=='__main__':
 # &HDDBB00&
 # &H2277FF&
 # &HDD7700&'''.splitlines()
-    colors = '&HBBCC33&;&HCCAAFF&;&H8BFFBD&'.split(';')
-    # for color in colors: print(hex_to_rgb(color))
-    bpm = 138
-    print(countdown_str('[00:01:34]', bpm), countdown_str('[00:30:92]', bpm), countdown_str('[02:01:33]', bpm))
+    colors = '&HCC6633&'.split(';')
+    for color in colors: print(hex_to_rgb(color))
+    bpm = 133
+    print(countdown_str('[00:01:64]', bpm))
+    print(countdown_str('[00:31:28]', bpm))
+    print(countdown_str('[01:39:55]', bpm))
+    print(countdown_str('[02:26:05]', bpm))

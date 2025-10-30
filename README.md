@@ -16,6 +16,8 @@ Some self-made Karaoke subtitles
 
 暂缺`partwkvclf.py` Vocaloid Wiki (Fandom)
 
+`textchecker.py` 文本校对
+
 ## FFmpeg Commands potentially helpful:
 ```
 ffmpeg -i '.\1.mp4' -t 27.58 -b:a 320k 2758.mp4

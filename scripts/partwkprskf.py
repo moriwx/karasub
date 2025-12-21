@@ -33,36 +33,73 @@ def process_text(text, speaker_info=''):
             for item in speakers
         ]
     print(speakers)
-    return text # , speakers
+    return text, speakers
 
 if __name__=='__main__':
     lrcstr = """
 
-{{Shizuku|「大丈夫」なんて言えなくて
-わたしはまた口籠って
-あなたに掛ける言葉さえ
-持てないです}}
+{{Kanade|途方もない時間だけ
+また過ぎていく}}
+{{multiccAlt|Rin 25, Ena|此処は理想郷では無い ましてや}}
+{{Ena|描いた未来じゃ無い}}
 
-{{MEIKO mmj|観えないこころの目織りが
-溢れるまで　堰き止めて}}
-{{Shizuku|傷付くあなたをこれ以上　見たくないんです}}
+{{Mizuki|終わりのない未来など
+なんて下らない}}
+{{multiccAlt|Rin 25, Mafuyu|夢の隙間に問う
+私は何処へと}} {{Mafuyu|行くの}}
 
-{{Minori|でもかなしいくらいに空回っちゃうから}}
-{{Haruka|このちいさな願いに魔法をかけて}}
-{{Airi|足りないわたしだってあなたに応えて}}
-{{Shizuku|その手を暖める希みをまださがしてる}}
+{{multiccAlt|Rin 25, Kanade, Mizuki|遠い遠い先の方へ}}
+{{Rin 25|痛みと歩いていた}}
+{{multiccAlt|Mafuyu, Ena, Mizuki|騒がしい街の声が}}
+{{Ena|頭に響く}}
 
-{{MulticcAlt|MEIKO mmj, Shizuku|あなたに巻きつく鎖を渦巻く嵐を
-ふいに翳っていくその微笑を}}
-{{MulticcAlt|MEIKO mmj, Minori, Haruka, Airi, Shizuku|あなたに空が泣いていく理由をとうか}}
+{{multiccAlt|Rin 25, Kanade, Mafuyu, Ena|夢の底でもがくのなら}}
+{{Ena|この夜をいっそ喰らってしまいたい}}
 
-{{MEIKO mmj|はんぶんこ　はんぶんこ　はんぶんこしたいだけ}}
-{{MulticcAlt|Airi, Shizuku|ねえ、ずっと}}　{{MulticcAlt|Haruka, Shizuku|そう、ずっと}}　{{Shizuku|差し出す傘の}}
-{{MulticcAlt|Minori, Shizuku|はんぶんに}}　{{MulticcAlt|MEIKO mmj, Shizuku|はんぶんに}}　{{Shizuku|はんぶんにさせて}}
+{{multiccAlt|Rin 25, Kanade, Mafuyu, Mizuki|呆れる程に傍にいて}}
+{{Mizuki|愚かでいい}} {{Kanade|二度と無い}}
+{{multiccAlt|Rin 25, Ena|今を生きていたいだけ}}
+{{Ena|それだけだ}}
+
+{{Mafuyu|救いのない話なら
+とうに聞き飽きた}}
+{{multiccAlt|Rin 25, Kanade|それを優しさと言って絆すなら}}
+{{Kanade|余計馬鹿らしい}}
+
+{{Mizuki|偽りないうつつなら
+なんて気儘だろう}}
+{{multiccAlt|Rin 25, Ena|夢の隙間に問う
+私は何処へと}}{{Ena|行くの}}
+
+{{multiccAlt|Rin 25, Mafuyu, Mizuki|暗い暗い闇の方へ}}
+{{Rin 25|ふと目を向ける度に}}
+{{multiccAlt|Kanade, Ena, Mizuki|下らない言葉達が}}
+{{Ena|心を満たす}}
+
+{{multiccAlt|Rin 25, Kanade, Mafuyu, Mizuki|夢の途中で目覚めたなら}}
+{{Mafuyu|この夜は一層濁ってしまうだろう}}
+
+{{multiccAlt|Rin 25, Kanade, Ena, Mizuki|触れた指が解けぬように}}
+{{Mizuki|今はただ}} {{Ena|願うまま}}
+{{multiccAlt|Rin 25, Ena|日々を過ごしていたいだけ}}
+
+{{Ena|それなのに}}{{Kanade|曖昧}}{{multiccAlt|Rin 25, Kanade|な温かさで}}
+{{Mafuyu|淡い理想に}}{{multiccAlt|Rin 25, Mafuyu|魅入られてしまう}}
+{{Mizuki|心ひとつ吐き}}{{multiccAlt|Rin 25, Mizuki|出せないくせに}}
+{{Ena|身勝手な私だ}}
+
+{{multiccAlt|Rin 25, Kanade, Mafuyu, Ena|夢の底でもがくのなら}}
+{{Ena|この夜をいっそ喰らってしまいたい}}
+
+{{multiccAlt|Rin 25, Kanade, Mafuyu, Mizuki|呆れる程に傍にいて}}
+{{Mizuki|愚かでいい}} {{Kanade|二度と無い}}
+{{multiccAlt|Rin 25, Ena|今を生きていたいだけ}}
+{{Ena|それだけだ}}
 
 
 """
-    print(process_text(lrcstr, '''{{MEIKO mmj|MEIKO}} • {{Minori|みのり}} • {{Haruka|遥}} • {{Airi|愛莉}} • {{Shizuku|雫}}'''))
+    str1, spk1 = process_text(lrcstr, '''{{Rin 25|リン}} • {{Kanade|奏}} • {{Mafuyu|まふゆ}} • {{Ena|絵名}} • {{Mizuki|瑞希}}''')
+    # print(str1)
 
 #     str1='''
 # ⑥「[00:03:27]大[00:03:54]丈[00:04:17]夫」[00:04:37]な[00:04:47]ん[00:04:76]て[00:05:03]言[00:05:65]え[00:05:89]な[00:06:33]く[00:06:69]て[00:07:06]
@@ -87,7 +124,7 @@ if __name__=='__main__':
 # ③[01:37:79]ね[01:38:02]え、[01:38:13]ず[01:38:38]っ[01:38:76]と[01:38:80]　④[01:39:10]そ[01:39:27]う、[01:39:43]ず[01:39:59]っ[01:39:76]と[01:39:85]　⑥[01:40:38]差[01:40:76]し[01:41:14]出[01:41:49]す[01:41:81]傘[01:42:50]の[01:42:89]
 # ⑤[01:43:24]は[01:43:52]ん[01:43:62]ぶ[01:43:73]ん[01:43:93]に[01:43:96]　①[01:44:51]は[01:44:65]ん[01:44:82]ぶ[01:45:00]ん[01:45:19]に[01:45:61]　⑥[01:45:92]は[01:46:07]ん[01:46:23]ぶ[01:46:38]ん[01:46:57]に[01:46:97]さ[01:47:81]せ[01:47:97]て[01:48:70]
 # '''
-#     speakers = ['MEIKO;雫', 'MEIKO;みのり;遥;愛莉;雫', '愛莉;雫', '遥;雫', 'みのり;雫', '雫', 'MEIKO', 'みのり', '遥', '愛莉']
-#     for i in range(len(speakers)):
-#         str1 = str1.replace(newnums[i], '【'+speakers[i]+'】')
-#     print(str1)
+#     spk1 = ['MEIKO;雫', 'MEIKO;みのり;遥;愛莉;雫', '愛莉;雫', '遥;雫', 'みのり;雫', '雫', 'MEIKO', 'みのり', '遥', '愛莉']
+    for i in range(len(spk1)):
+        str1 = str1.replace(newnums[i], '【'+spk1[i]+'】')
+    print(str1)

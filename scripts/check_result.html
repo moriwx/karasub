@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>文本校对结果</title>
+    <style>
+        body {
+            font-family: 'Consolas', 'Monaco', monospace;
+            margin: 20px;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        .legend {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .diff-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .text-block {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        .char {
+            padding: 1px 2px;
+            border-radius: 2px;
+            margin: 0 1px;
+        }
+        .deleted {
+            background-color: #ffcccc;
+            /* text-decoration: line-through; */
+            color: #cc0000;
+        }
+        .added {
+            background-color: #ccffcc;
+            color: #006600;
+        }
+        .unchanged {
+            /* 默认样式，无特殊标记 */
+        }
+        .summary {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e8f4f8;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>文本校对结果</h1>
+        <div class="diff-container">
+            <div class="text-block" id="combined-diff"><span class="char deleted">
+</span><span class="char unchanged">風</span><span class="char unchanged">を</span><span class="char unchanged">置</span><span class="char unchanged">い</span><span class="char unchanged">て</span><span class="char deleted">
+</span><span class="char added"> </span><span class="char unchanged">雨</span><span class="char unchanged">を</span><span class="char unchanged">抜</span><span class="char unchanged">け</span><span class="char unchanged">て</span><span class="char unchanged"> </span><span class="char deleted">
+</span><span class="char unchanged">咲</span><span class="char unchanged">き</span><span class="char unchanged">誇</span><span class="char unchanged">れ</span><span class="char unchanged">
+</span><span class="char deleted">
+</span><span class="char deleted">●</span><span class="char deleted">●</span><span class="char deleted">●</span><span class="char deleted">●</span><span class="char unchanged">
+</span><span class="char unchanged">あ</span><span class="char unchanged">ぁ</span><span class="char unchanged"> </span><span class="char unchanged">夜</span><span class="char unchanged">風</span><span class="char unchanged">に</span><span class="char unchanged">揺</span><span class="char unchanged">ら</span><span class="char unchanged">れ</span><span class="char added">て</span><span class="char unchanged">い</span><span class="char unchanged">る</span><span class="char added">
+</span><span class="char unchanged">
+</span><span class="char unchanged">折</span><span class="char unchanged">れ</span><span class="char unchanged">な</span><span class="char unchanged">い</span><span class="char unchanged">よ</span><span class="char unchanged">う</span><span class="char unchanged">に</span><span class="char deleted"> </span><span class="char unchanged">怯</span><span class="char unchanged">え</span><span class="char unchanged">て</span><span class="char unchanged">い</span><span class="char unchanged">る</span><span class="char unchanged">
+</span><span class="char unchanged">
+</span><span class="char unchanged">ず</span><span class="char unchanged">っ</span><span class="char unchanged">と</span><span class="char deleted"> </span><span class="char unchanged">雨</span><span class="char unchanged">に</span><span class="char unchanged">濡</span><span class="char unchanged">ら</span><span class="char unchanged">さ</span><span class="char unchanged">れ</span><span class="char unchanged">て</span><span class="char unchanged">い</span><span class="char unchanged">る</span><span class="char unchanged">
+</span><span class="char added">
+</span><span class="char unchanged">ま</span><span class="char unchanged">た</span><span class="char unchanged">ど</span><span class="char unchanged">う</span><span class="char unchanged">し</span><span class="char unchanged">た</span><span class="char unchanged">っ</span><span class="char unchanged">て</span><span class="char unchanged">
+</span><span class="char unchanged">
+</span><span class="char unchanged">凍</span><span class="char unchanged">え</span><span class="char unchanged">て</span><span class="char unchanged">し</span><span class="char unchanged">ま</span><span class="char unchanged">っ</span><span class="char unchanged">た</span><span class="char unchanged">ん</span><span class="char unchanged">だ</span><span class="char added">
+</span><span class="char unchanged">
+</span><span class="char unchanged">誰</span><span class="char unchanged">か</span><span class="char unchanged">こ</span><span class="char unchanged">の</span><span class="char unchanged">声</span><span class="char unchanged">に</span><span class="char unchanged">応</span><span class="char unchanged">答</span><span class="char unchanged">し</span><span class="char unchanged">て</span><span class="char unchanged">
+</span><span class="char unchanged">
+</span><span class="char unchanged">痛</span><span class="char unchanged">が</span><span class="char unchanged">る</span><span class="char unchanged">ば</span><span class="char unchanged">っ</span><span class="char unchanged">か</span><span class="char deleted">て</span><span class="char deleted"> </span><span class="char added">で</span><span class="char added">
+</span><span class="char unchanged">
+</span><span class="char unchanged">咲</span><span class="char unchanged">け</span><span class="char unchanged">な</span><span class="char unchanged">い</span><span class="char unchanged">ま</span><span class="char unchanged">ま</span><span class="char unchanged">の</span><span class="char unchanged">ハ</span><span class="char unchanged">ー</span><span class="char unchanged">ト</span><span class="char unchanged">を</span><span class="char unchanged">
+</span><span class="char unchanged">
+</span><span class="char unchanged">あ</span><span class="char unchanged">ぁ</span><span class="char deleted"> </span><span class="char unchanged">今</span><span class="char unchanged"> </span><span class="char unchanged">見</span><span class="char unchanged">逃</span><span class="char unchanged">せ</span><span class="char unchanged">な</span><span class="char unchanged">い</span><span class="char unchanged">く</span><span class="char unchanged">ら</span><span class="char unchanged">い</span><span class="char deleted">
+</span><span class="char unchanged">綺</span><span class="char unchanged">麗</span><span class="char unchanged">に</span><span class="char added">
+</span><span class="char added">
+</span><span class="char unchanged">咲</span><span class="char unchanged">か</span><span class="char unchanged">せ</span><span class="char unchanged">た</span><span class="char unchanged">い</span><span class="char unchanged">ん</span><span class="char unchanged">だ</span><span class="char unchanged">
+</span><span class="char unchanged">
+</span><span class="char unchanged">光</span><span class="char unchanged">っ</span><span class="char unchanged">て</span><span class="char unchanged">い</span><span class="char unchanged">た</span><span class="char unchanged">未</span><span class="char unchanged">来</span><span class="char unchanged">が</span><span class="char added">
+</span><span class="char added">
+</span><span class="char unchanged">ず</span><span class="char unchanged">っ</span><span class="char unchanged">と</span><span class="char deleted">
+</span><span class="char unchanged">待</span><span class="char unchanged">っ</span><span class="char unchanged">て</span><span class="char unchanged">い</span><span class="char unchanged">た</span><span class="char unchanged">世</span><span class="char unchanged">界</span><span class="char unchanged">が</span><span class="char deleted"> </span><span class="char unchanged">
+</span><span class="char deleted">煌</span><span class="char added">
+</span><span class="char added">き</span><span class="char added">ら</span><span class="char unchanged">め</span><span class="char unchanged">く</span><span class="char unchanged">音</span><span class="char unchanged">の</span><span class="char unchanged">中</span><span class="char unchanged">に</span><span class="char unchanged">あ</span><span class="char unchanged">る</span><span class="char unchanged">な</span><span class="char unchanged">ら</span><span class="char unchanged">
+</span><span class="char unchanged">
+</span><span class="char unchanged">最</span><span class="char unchanged">低</span><span class="char unchanged">で</span><span class="char unchanged">最</span><span class="char unchanged">悪</span><span class="char unchanged">な</span><span class="char unchanged">涙</span><span class="char unchanged">も</span><span class="char unchanged">
+</span><span class="char added">
+</span><span class="char unchanged">痛</span><span class="char unchanged">が</span><span class="char unchanged">り</span><span class="char unchanged">で</span><span class="char unchanged">嫌</span><span class="char unchanged">い</span><span class="char unchanged">な</span><span class="char unchanged">声</span><span class="char unchanged">も</span><span class="char unchanged">
+</span><span class="char added">
+</span><span class="char unchanged">連</span><span class="char unchanged">れ</span><span class="char unchanged">て</span><span class="char deleted">行</span><span class="char added">い</span><span class="char unchanged">き</span><span class="char unchanged">た</span><span class="char unchanged">い</span><span class="char unchanged">ん</span><span class="char unchanged">だ</span><span class="char unchanged">全</span><span class="char unchanged">部</span><span class="char unchanged">
+</span><span class="char unchanged">
+</span><span class="char unchanged">不</span><span class="char unchanged">完</span><span class="char unchanged">全</span><span class="char unchanged">な</span><span class="char unchanged">毎</span><span class="char unchanged">日</span><span class="char unchanged">が</span><span class="char unchanged">
+</span><span class="char added">
+</span><span class="char unchanged">一</span><span class="char unchanged">瞬</span><span class="char unchanged">の</span><span class="char unchanged">カ</span><span class="char unchanged">ケ</span><span class="char unchanged">ラ</span><span class="char deleted">達</span><span class="char added">た</span><span class="char added">ち</span><span class="char unchanged">が</span><span class="char deleted">
+</span><span class="char unchanged">重</span><span class="char unchanged">な</span><span class="char unchanged">っ</span><span class="char unchanged">て</span><span class="char added">
+</span><span class="char added">
+</span><span class="char unchanged">こ</span><span class="char unchanged">ん</span><span class="char unchanged">な</span><span class="char unchanged">歌</span><span class="char unchanged">を</span><span class="char unchanged">奏</span><span class="char unchanged">で</span><span class="char unchanged">た</span><span class="char unchanged">ら</span><span class="char unchanged">
+</span><span class="char unchanged">
+</span><span class="char unchanged">そ</span><span class="char unchanged">れ</span><span class="char unchanged">は</span><span class="char added">
+</span><span class="char unchanged">
+</span><span class="char unchanged">言</span><span class="char unchanged">葉</span><span class="char unchanged">だ</span><span class="char unchanged">け</span><span class="char unchanged">じ</span><span class="char unchanged">ゃ</span><span class="char unchanged">届</span><span class="char unchanged">か</span><span class="char unchanged">な</span><span class="char unchanged">い</span><span class="char unchanged">距</span><span class="char unchanged">離</span><span class="char unchanged">を</span><span class="char unchanged">
+</span><span class="char unchanged">
+</span><span class="char unchanged">き</span><span class="char unchanged">っ</span><span class="char unchanged">と</span><span class="char deleted">
+</span><span class="char unchanged">飛</span><span class="char unchanged">び</span><span class="char unchanged">越</span><span class="char unchanged">え</span><span class="char unchanged">て</span><span class="char unchanged">結</span><span class="char unchanged">ぶ</span><span class="char unchanged">
+</span><span class="char unchanged">
+</span><span class="char unchanged">き</span><span class="char unchanged">っ</span><span class="char unchanged">と</span><span class="char deleted">
+</span><span class="char unchanged">輪</span><span class="char unchanged">を</span><span class="char unchanged">描</span><span class="char unchanged">い</span><span class="char unchanged">て</span><span class="char unchanged">い</span><span class="char unchanged">く</span><span class="char unchanged">
+</span><span class="char unchanged">
+</span><span class="char unchanged">さ</span><span class="char unchanged">ぁ</span><span class="char deleted"> </span><span class="char unchanged">涙</span><span class="char unchanged">を</span><span class="char unchanged">拭</span><span class="char unchanged">い</span><span class="char unchanged">て</span><span class="char unchanged"> </span><span class="char unchanged">喉</span><span class="char unchanged">を</span><span class="char unchanged">鳴</span><span class="char unchanged">ら</span><span class="char unchanged">し</span><span class="char unchanged">て</span><span class="char deleted"> </span><span class="char added">
+</span><span class="char unchanged">
+</span><span class="char unchanged">心</span><span class="char unchanged">臓</span><span class="char unchanged">が</span><span class="char unchanged">ペ</span><span class="char unchanged">ー</span><span class="char unchanged">ス</span><span class="char unchanged">ア</span><span class="char deleted">ー</span><span class="char added">ッ</span><span class="char unchanged">プ</span><span class="char unchanged">し</span><span class="char unchanged">て</span><span class="char unchanged">い</span><span class="char unchanged">く</span><span class="char unchanged">
+</span><span class="char unchanged">
+</span><span class="char unchanged">怖</span><span class="char unchanged">が</span><span class="char unchanged">ら</span><span class="char unchanged">な</span><span class="char unchanged">い</span><span class="char unchanged">で</span><span class="char added">ノ</span><span class="char added">ッ</span><span class="char deleted"> </span><span class="char deleted">乗</span><span class="char deleted">っ</span><span class="char unchanged">て</span><span class="char unchanged">け</span><span class="char added">
+</span><span class="char added">
+</span><span class="char unchanged">飛</span><span class="char unchanged">ん</span><span class="char unchanged">で</span><span class="char unchanged">浮</span><span class="char unchanged">い</span><span class="char unchanged">て</span><span class="char unchanged">
+</span><span class="char deleted">ペ</span><span class="char added">
+</span><span class="char added">ベ</span><span class="char unchanged">ロ</span><span class="char unchanged">を</span><span class="char unchanged">回</span><span class="char unchanged">し</span><span class="char unchanged">て</span><span class="char deleted"> </span><span class="char added">
+</span><span class="char added">
+</span><span class="char unchanged">グ</span><span class="char unchanged">ル</span><span class="char added">ー</span><span class="char unchanged">ヴ</span><span class="char unchanged">と</span><span class="char unchanged">ラ</span><span class="char unchanged">ン</span><span class="char unchanged">デ</span><span class="char unchanged">ヴ</span><span class="char deleted">ー</span><span class="char unchanged">し</span><span class="char unchanged">て</span><span class="char unchanged">い</span><span class="char unchanged">く</span><span class="char unchanged">
+</span><span class="char unchanged">
+</span><span class="char unchanged">こ</span><span class="char unchanged">ん</span><span class="char unchanged">が</span><span class="char unchanged">ら</span><span class="char unchanged">が</span><span class="char unchanged">っ</span><span class="char unchanged">ち</span><span class="char unchanged">ゃ</span><span class="char added">
+</span><span class="char added">
+</span><span class="char unchanged">つ</span><span class="char unchanged">ま</span><span class="char unchanged">ん</span><span class="char unchanged">な</span><span class="char unchanged">い</span><span class="char unchanged">も</span><span class="char unchanged">ん</span><span class="char unchanged">ね</span><span class="char unchanged">
+</span><span class="char added">
+</span><span class="char unchanged">迷</span><span class="char unchanged">っ</span><span class="char unchanged">た</span><span class="char unchanged">ら</span><span class="char unchanged">踊</span><span class="char unchanged">れ</span><span class="char deleted"> </span><span class="char added">
+</span><span class="char added">
+</span><span class="char unchanged">時</span><span class="char unchanged">代</span><span class="char unchanged">は</span><span class="char unchanged">セ</span><span class="char unchanged">ン</span><span class="char deleted">せ</span><span class="char added">セ</span><span class="char unchanged">ー</span><span class="char unchanged">シ</span><span class="char unchanged">ョ</span><span class="char unchanged">ナ</span><span class="char unchanged">ル</span><span class="char unchanged">
+</span><span class="char unchanged">
+</span><span class="char deleted">お</span><span class="char added">御</span><span class="char unchanged">構</span><span class="char unchanged">い</span><span class="char deleted">な</span><span class="char added">無</span><span class="char unchanged">し</span><span class="char unchanged">の</span><span class="char deleted">稲</span><span class="char deleted">妻</span><span class="char added">イ</span><span class="char added">ナ</span><span class="char added">ズ</span><span class="char added">マ</span><span class="char added">
+</span><span class="char added">
+</span><span class="char unchanged">泣</span><span class="char unchanged">い</span><span class="char unchanged">て</span><span class="char deleted">
+</span><span class="char unchanged">声</span><span class="char unchanged">を</span><span class="char unchanged">嗄</span><span class="char unchanged">ら</span><span class="char unchanged">し</span><span class="char unchanged">て</span><span class="char unchanged">
+</span><span class="char unchanged">
+</span><span class="char unchanged">泥</span><span class="char unchanged">だ</span><span class="char unchanged">ら</span><span class="char unchanged">け</span><span class="char unchanged">に</span><span class="char unchanged">な</span><span class="char unchanged">っ</span><span class="char unchanged">て</span><span class="char unchanged">も</span><span class="char deleted">
+</span><span class="char unchanged">生</span><span class="char unchanged">き</span><span class="char unchanged">て</span><span class="char unchanged">い</span><span class="char deleted">き</span><span class="char unchanged">た</span><span class="char unchanged">い</span><span class="char unchanged">
+</span><span class="char unchanged">
+</span><span class="char unchanged">今</span><span class="char unchanged">夜</span><span class="char deleted"> </span><span class="char unchanged">あ</span><span class="char unchanged">の</span><span class="char unchanged">空</span><span class="char unchanged">で</span><span class="char unchanged">合</span><span class="char unchanged">流</span><span class="char unchanged">し</span><span class="char unchanged">て</span><span class="char added">
+</span><span class="char unchanged">
+</span><span class="char unchanged">朝</span><span class="char unchanged">が</span><span class="char unchanged">満</span><span class="char unchanged">た</span><span class="char unchanged">す</span><span class="char unchanged">ま</span><span class="char unchanged">で</span><span class="char unchanged">
+</span><span class="char unchanged">
+</span><span class="char unchanged">そ</span><span class="char unchanged">れ</span><span class="char unchanged">ぞ</span><span class="char unchanged">れ</span><span class="char unchanged">の</span><span class="char unchanged">星</span><span class="char unchanged">を</span><span class="char unchanged">探</span><span class="char unchanged">そ</span><span class="char unchanged">う</span><span class="char unchanged">
+</span><span class="char added">
+</span><span class="char unchanged">ね</span><span class="char added">ぇ</span><span class="char deleted">え</span><span class="char deleted">、</span><span class="char unchanged">今</span><span class="char added">
+</span><span class="char added">
+</span><span class="char unchanged">同</span><span class="char unchanged">じ</span><span class="char deleted">事</span><span class="char added">こ</span><span class="char added">と</span><span class="char unchanged">を</span><span class="char deleted">
+</span><span class="char deleted">
+</span><span class="char unchanged">思</span><span class="char unchanged">っ</span><span class="char unchanged">て</span><span class="char unchanged">い</span><span class="char unchanged">た</span><span class="char unchanged">ん</span><span class="char unchanged">だ</span><span class="char unchanged">っ</span><span class="char unchanged">て</span><span class="char unchanged">
+</span><span class="char added">
+</span><span class="char unchanged">ほ</span><span class="char unchanged">ら</span><span class="char deleted"> </span><span class="char unchanged">話</span><span class="char unchanged">さ</span><span class="char unchanged">な</span><span class="char unchanged">く</span><span class="char unchanged">て</span><span class="char unchanged">も</span><span class="char unchanged">分</span><span class="char unchanged">か</span><span class="char unchanged">り</span><span class="char unchanged">合</span><span class="char unchanged">え</span><span class="char unchanged">た</span><span class="char unchanged">
+</span><span class="char unchanged">
+</span><span class="char unchanged">あ</span><span class="char unchanged">ぁ</span><span class="char unchanged"> </span><span class="char unchanged">あ</span><span class="char unchanged">ぁ</span><span class="char deleted">
+</span><span class="char added"> </span><span class="char unchanged">こ</span><span class="char unchanged">ん</span><span class="char unchanged">な</span><span class="char unchanged">嬉</span><span class="char unchanged">し</span><span class="char unchanged">さ</span><span class="char unchanged">を</span><span class="char unchanged">ず</span><span class="char unchanged">っ</span><span class="char unchanged">と</span><span class="char added">
+</span><span class="char unchanged">
+</span><span class="char unchanged">歌</span><span class="char unchanged">っ</span><span class="char unchanged">て</span><span class="char unchanged">み</span><span class="char unchanged">た</span><span class="char unchanged">か</span><span class="char unchanged">っ</span><span class="char unchanged">た</span><span class="char unchanged">
+</span><span class="char unchanged">
+</span><span class="char unchanged">光</span><span class="char unchanged">っ</span><span class="char unchanged">て</span><span class="char unchanged">い</span><span class="char unchanged">た</span><span class="char unchanged">未</span><span class="char unchanged">来</span><span class="char unchanged">が</span><span class="char added">
+</span><span class="char added">
+</span><span class="char unchanged">ず</span><span class="char unchanged">っ</span><span class="char unchanged">と</span><span class="char deleted">
+</span><span class="char unchanged">待</span><span class="char unchanged">っ</span><span class="char unchanged">て</span><span class="char unchanged">い</span><span class="char unchanged">た</span><span class="char unchanged">世</span><span class="char unchanged">界</span><span class="char unchanged">が</span><span class="char unchanged">
+</span><span class="char deleted">煌</span><span class="char added">
+</span><span class="char added">き</span><span class="char added">ら</span><span class="char unchanged">め</span><span class="char unchanged">い</span><span class="char unchanged">て</span><span class="char unchanged">目</span><span class="char unchanged">の</span><span class="char unchanged">前</span><span class="char unchanged">に</span><span class="char unchanged">あ</span><span class="char unchanged">る</span><span class="char unchanged">か</span><span class="char unchanged">ら</span><span class="char unchanged">
+</span><span class="char unchanged">
+</span><span class="char unchanged">瞬</span><span class="char unchanged">き</span><span class="char unchanged">の</span><span class="char unchanged">刹</span><span class="char unchanged">那</span><span class="char unchanged">ま</span><span class="char unchanged">で</span><span class="char unchanged">
+</span><span class="char added">
+</span><span class="char unchanged">こ</span><span class="char unchanged">の</span><span class="char added">物</span><span class="char added">語</span><span class="char deleted">ス</span><span class="char deleted">ト</span><span class="char deleted">ー</span><span class="char deleted">リ</span><span class="char deleted">ー</span><span class="char unchanged">の</span><span class="char unchanged">最</span><span class="char unchanged">後</span><span class="char unchanged">ま</span><span class="char unchanged">で</span><span class="char unchanged">
+</span><span class="char added">
+</span><span class="char unchanged">輝</span><span class="char unchanged">く</span><span class="char unchanged">花</span><span class="char unchanged">で</span><span class="char unchanged">い</span><span class="char unchanged">た</span><span class="char unchanged">い</span><span class="char deleted">な</span><span class="char added">ん</span><span class="char added">だ</span><span class="char unchanged">
+</span><span class="char unchanged">
+</span><span class="char unchanged">不</span><span class="char unchanged">完</span><span class="char unchanged">全</span><span class="char unchanged">な</span><span class="char unchanged">私</span><span class="char deleted">達</span><span class="char added">た</span><span class="char added">ち</span><span class="char unchanged">が</span><span class="char added">
+</span><span class="char unchanged">
+</span><span class="char unchanged">一</span><span class="char unchanged">瞬</span><span class="char unchanged">の</span><span class="char unchanged">カ</span><span class="char unchanged">ケ</span><span class="char unchanged">ラ</span><span class="char deleted">達</span><span class="char added">た</span><span class="char added">ち</span><span class="char unchanged">が</span><span class="char deleted">
+</span><span class="char unchanged">重</span><span class="char unchanged">な</span><span class="char unchanged">っ</span><span class="char unchanged">て</span><span class="char added">
+</span><span class="char added">
+</span><span class="char unchanged">こ</span><span class="char unchanged">ん</span><span class="char unchanged">な</span><span class="char unchanged">歌</span><span class="char unchanged">を</span><span class="char unchanged">奏</span><span class="char unchanged">で</span><span class="char unchanged">た</span><span class="char unchanged">ら</span><span class="char unchanged">
+</span><span class="char unchanged">
+</span><span class="char unchanged">そ</span><span class="char unchanged">れ</span><span class="char unchanged">は</span><span class="char added">
+</span><span class="char unchanged">
+</span><span class="char unchanged">夢</span><span class="char unchanged">見</span><span class="char unchanged">る</span><span class="char unchanged">だ</span><span class="char unchanged">け</span><span class="char unchanged">じ</span><span class="char unchanged">ゃ</span><span class="char unchanged">叶</span><span class="char unchanged">わ</span><span class="char unchanged">な</span><span class="char unchanged">い</span><span class="char unchanged">想</span><span class="char unchanged">い</span><span class="char unchanged">を</span><span class="char unchanged">
+</span><span class="char unchanged">
+</span><span class="char unchanged">ず</span><span class="char unchanged">っ</span><span class="char unchanged">と</span><span class="char deleted">
+</span><span class="char unchanged">新</span><span class="char unchanged">し</span><span class="char unchanged">く</span><span class="char unchanged">し</span><span class="char unchanged">て</span><span class="char unchanged">い</span><span class="char unchanged">く</span><span class="char unchanged">
+</span><span class="char unchanged">
+</span><span class="char unchanged">ず</span><span class="char unchanged">っ</span><span class="char unchanged">と</span><span class="char deleted"> </span><span class="char deleted">
+</span><span class="char unchanged">追</span><span class="char unchanged">い</span><span class="char deleted">掛</span><span class="char added">か</span><span class="char unchanged">け</span><span class="char unchanged">て</span><span class="char unchanged">い</span><span class="char unchanged">こ</span><span class="char unchanged">う</span><span class="char unchanged">
+</span><span class="char unchanged">
+</span><span class="char unchanged">風</span><span class="char unchanged">を</span><span class="char unchanged">置</span><span class="char unchanged">い</span><span class="char unchanged">て</span><span class="char deleted">
+</span><span class="char added"> </span><span class="char unchanged">雨</span><span class="char unchanged">を</span><span class="char unchanged">抜</span><span class="char unchanged">け</span><span class="char unchanged">て</span><span class="char added"> </span><span class="char deleted">
+</span><span class="char deleted">
+</span><span class="char unchanged">咲</span><span class="char unchanged">き</span><span class="char unchanged">誇</span><span class="char unchanged">れ</span><span class="char added">
+</span><span class="char unchanged">
+</span><span class="char unchanged">満</span><span class="char unchanged">天</span><span class="char unchanged">の</span><span class="char unchanged">空</span><span class="char unchanged">へ</span><span class="char deleted">
+</span><span class="char deleted">
+</span></div>
+        </div>
+        <div class="summary">
+            <h3>差异统计:</h3>
+            <p>文本1长度: 705 字符</p>
+            <p>文本2长度: 718 字符</p>
+            <p>总差异数: 149</p>
+            <p>生成时间: 2025-12-22 00:42:44</p>
+        </div>
+        <div class="legend">
+            <h3>图例说明:</h3>
+            <p><span class="char deleted">红色背景</span> - 在文本1中存在但在文本2中被删除的字符</p>
+            <p><span class="char added">绿色背景</span> - 在文本2中新增的字符</p>
+            <p>无标记 - 两个文本中相同的字符</p>
+        </div>
+    </div>
+</body>
+</html>

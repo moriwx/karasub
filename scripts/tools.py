@@ -6,25 +6,25 @@ import math
 from typing import Tuple, List
 
 prsk_hex_list = ['#33ccbb', '#ffcc11', '#ffee11', '#ffbbcc', '#dd4444', '#3366cc',
- '#4455dd', '#33aaee', '#ffdd44', '#ee6666', '#bbdd22',
- '#88dd44', '#ffccaa', '#99ccff', '#ffaacc', '#99eedd',
- '#ee1166', '#ff6699', '#00bbdd', '#ff7722', '#0077dd',
- '#ff9900', '#ffbb00', '#ff66bb', '#33dd99', '#bb88ee',
- '#884499', '#bb6688', '#8888cc', '#ccaa88', '#ddaacc']
+ '#4455dd', '#33aaee', '#ffdd44', '#ee6666', '#bbdd22', # L/n
+ '#88dd44', '#ffccaa', '#99ccff', '#ffaacc', '#99eedd', # MMJ
+ '#ee1166', '#ff6699', '#00bbdd', '#ff7722', '#0077dd', # VBS
+ '#ff9900', '#ffbb00', '#ff66bb', '#33dd99', '#bb88ee', # WS
+ '#884499', '#bb6688', '#8888cc', '#ccaa88', '#ddaacc'] # 25
 
-prsk_cl0_list = ['#33ccbb', '#ffcc11', '#ffee11', '#ffbbcc', '#dd4444', '#3366cc',
- '#4455dd', '#33aaee', '#ffdd44', '#ee6666', '#bbdd22',
- '#88dd44', '#ffccaa', '#99ccff', '#ffaacc', '#99eedd',
- '#ee1166', '#ff6699', '#00bbdd', '#ff7722', '#0077dd',
- '#ff9900', '#ffbb00', '#ff66bb', '#33dd99', '#bb88ee',
- '#884499', '#bb6688', '#8888cc', '#ccaa88', '#ddaacc']
+prsk_cl0_list = ['#25c7a5', '#ffcc11', '#e0bd52', '#e384a7', '#e35c55', '#3d69d4',
+ '#4455dd', '#35aff5', '#e0be00', '#e03e3a', '#92c700', # L/n
+ '#64d426', '#ed9561', '#499bed', '#f72eac', '#2dd69f', # MMJ
+ '#ee1166', '#ff6699', '#00bbdd', '#ff7722', '#0077dd', # VBS
+ '#ff9900', '#f0b000', '#ed3bbb', '#0ed975', '#a662e8', # WS
+ '#9654ab', '#bf698b', '#7777b3', '#ab8e72', '#c497b6'] # 25
 
-prsk_cl1_list = ['#33ccbb', '#ffcc11', '#b39f00', '#e04e6c', '#dd4444', '#3366cc',
- '#4455dd', '#33aaee', '#ffdd44', '#ee6666', '#bbdd22',
- '#58b80a', '#eb8a23', '#178cdb', '#ed32a3', '#0dba8a',
- '#d40f5b', '#d42c72', '#1ab5cf', '#e0692f', '#0064ba',
- '#ff9900', '#ffbb00', '#ff66bb', '#33dd99', '#bb88ee',
- '#884499', '#bb6688', '#8888cc', '#ccaa88', '#ddaacc']
+prsk_cl1_list = ['#10a17f', '#ffcc11', '#b39f00', '#e04e6c', '#c71616', '#1c48bf',
+ '#2b3ccc', '#1186c7', '#a3790f', '#d91215', '#738715', # L/n
+ '#58b80a', '#eb6c17', '#0c7ed4', '#eb1dac', '#0dba8a', # MMJ
+ '#d40f5b', '#d42c72', '#1ab5cf', '#e0692f', '#0064ba', # VBS
+ '#ff9900', '#e37500', '#e517a2', '#01b852', '#8e31d9', # WS
+ '#5f2775', '#995370', '#575782', '#73604d', '#a67f99'] # 25
 
 def hex_to_rgb(hex_color: str) -> Tuple[int, int, int]:
     """将十六进制颜色转换为RGB"""

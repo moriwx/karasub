@@ -12,17 +12,17 @@ prsk_hex_list = ['#33ccbb', '#ffcc11', '#ffee11', '#ffbbcc', '#dd4444', '#3366cc
  '#ff9900', '#ffbb00', '#ff66bb', '#33dd99', '#bb88ee', # WS
  '#884499', '#bb6688', '#8888cc', '#ccaa88', '#ddaacc'] # 25
 
-prsk_cl0_list = ['#25c7a5', '#ffcc11', '#e0bd52', '#e384a7', '#e35c55', '#3d69d4',
+prsk_cl0_list = ['#25c7a5', '#e6af0a', '#e0bd52', '#e384a7', '#e35c55', '#3d69d4',
  '#4455dd', '#35aff5', '#e0be00', '#e03e3a', '#92c700', # L/n
  '#64d426', '#ed9561', '#499bed', '#f72eac', '#2dd69f', # MMJ
- '#ee1166', '#ff6699', '#00bbdd', '#ff7722', '#0077dd', # VBS
+ '#ee1166', '#f7569d', '#00b3d4', '#ed6f20', '#006cc9', # VBS
  '#ff9900', '#f0b000', '#ed3bbb', '#0ed975', '#a662e8', # WS
  '#9654ab', '#bf698b', '#7777b3', '#ab8e72', '#c497b6'] # 25
 
-prsk_cl1_list = ['#10a17f', '#ffcc11', '#b39f00', '#e04e6c', '#c71616', '#1c48bf',
+prsk_cl1_list = ['#10a17f', '#bd970d', '#b39f00', '#e04e6c', '#c71616', '#1c48bf',
  '#2b3ccc', '#1186c7', '#a3790f', '#d91215', '#738715', # L/n
  '#58b80a', '#eb6c17', '#0c7ed4', '#eb1dac', '#0dba8a', # MMJ
- '#d40f5b', '#d42c72', '#1ab5cf', '#e0692f', '#0064ba', # VBS
+ '#d40f5b', '#d42c72', '#029fba', '#e0692f', '#0064ba', # VBS
  '#ff9900', '#e37500', '#e517a2', '#01b852', '#8e31d9', # WS
  '#5f2775', '#995370', '#575782', '#73604d', '#a67f99'] # 25
 
@@ -174,48 +174,46 @@ if __name__=='__main__':
     print(renumber_BV1KiySYBEHn("""
 - Leo/need
 p1 needLe youtu.be/pW-GK65DYLI
-p11111 ステラ youtu.be/myVWDvuggQs
-p2 「1」 youtu.be/I5hu-LNsS-o
-p3 フロムトーキョー sm39106936
-p3222 オーダーメイド youtu.be/NhQitdsF5Yg
-p3222 てらてら youtu.be/mpaWT_YzRVw
-p4 フレー youtu.be/agMgpdy0Aiw
-p5 相生 sm42727291
-p6 purpose sm43046990
-p7 インテグラル sm43487328
+p2 ステラ youtu.be/myVWDvuggQs
+p3 「1」 youtu.be/I5hu-LNsS-o
+p4 フロムトーキョー sm39106936
+p6 てらてら youtu.be/mpaWT_YzRVw
+p7 フレー youtu.be/agMgpdy0Aiw
+p8 相生 sm42727291
+p9 purpose sm43046990
+p10 インテグラル sm43487328
 - MORE MORE JUMP！
-p8 Color of Drops youtu.be/vhJ_wXaVeIA
-p111 メタモリボン youtu.be/waYz_v31-e8
-p9 パラソルサイダー youtu.be/2huRUG-iGxM
-p10 DREAM PLACE sm41264878
-p11 フロート・プランナー sm41915596
-p12 MOTTO!!! BV1bC4y1e7xJ
-p13 JUMPIN' OVER! BV16x4y1C7pE
-p14 キラー BV1FpaRebEuJ
+p11 Color of Drops youtu.be/vhJ_wXaVeIA
+p12 メタモリボン youtu.be/waYz_v31-e8
+p13 パラソルサイダー youtu.be/2huRUG-iGxM
+p14 DREAM PLACE sm41264878
+p15 フロート・プランナー sm41915596
+p16 MOTTO!!! BV1bC4y1e7xJ
+p17 JUMPIN' OVER! BV16x4y1C7pE
+p18 キラー BV1FpaRebEuJ
 - Vivid BAD SQUAD
-p15111 Forward youtu.be/dCrXNKS2jPQ
-p15111 シネマ youtu.be/QdSd-2NxHVU
-p15111 虚ろを扇ぐ youtu.be/Q63vzQKchAU
-p15 リアライズ sm42646834
-p16 烈火 sm43894030
-p17 ULTRA C BV16A8ne4Ejz
+p19 Forward youtu.be/dCrXNKS2jPQ
+p20 シネマ youtu.be/QdSd-2NxHVU
+p21 虚ろを扇ぐ youtu.be/Q63vzQKchAU
+p22 リアライズ sm42646834
+p23 烈火 sm43894030
+p24 ULTRA C BV16A8ne4Ejz
 - ワンダーランズ×ショウタイム
-p18 セカイはまだ始まってすらいない sm36721480
-p19 Glory Steady Go! sm39296549
-p20 88☆彡 sm40354730
-p21 星空のメロディー sm40699172
-p22 どんな結末がお望みだい？ youtu.be/nYu4rlSLPl4
-p23 Mr. Showtime sm41987708
-p24 サイバーパンクデッドボーイ sm43357352
-p25 オペラ！スペースオペラ！ sm43914598
+p25 Glory Steady Go! sm39296549
+p26 88☆彡 sm40354730
+p27 星空のメロディー sm40699172
+p28 どんな結末がお望みだい？ youtu.be/nYu4rlSLPl4
+p29 Mr. Showtime sm41987708
+p30 オペラ！スペースオペラ！ sm43914598
 - 25時、ナイトコードで。
-p26 悔やむと書いてミライ youtu.be/e4FakrYWxL8
-p27 携帯恋話 youtu.be/SvGHs7F-DN8
-p28222 再生 youtu.be/iiN7TYmNE3s
-p28 ロウワー youtu.be/kua4sEc6Smo
-p29 トリコロージュ youtu.be/g70THANniZw
-p30 ノマド youtu.be/Prs71tG5Rt0
-p30888 アイデンティティ youtu.be/7C24evjvOBM
-p31 君の夜をくれ youtu.be/4CBFqGSYxc4
-p32221 Iなんです youtu.be/sppaCuXvM6s
+p31 悔やむと書いてミライ youtu.be/e4FakrYWxL8
+p32 携帯恋話 youtu.be/SvGHs7F-DN8
+p33 再生 youtu.be/iiN7TYmNE3s
+p34 ロウワー youtu.be/kua4sEc6Smo
+p35 トリコロージュ youtu.be/g70THANniZw
+p36 ノマド youtu.be/Prs71tG5Rt0
+p37 アイデンティティ youtu.be/7C24evjvOBM
+p38 君の夜をくれ youtu.be/4CBFqGSYxc4
+p39 Iなんです youtu.be/sppaCuXvM6s
+p40 演劇 sm42519680
 """))

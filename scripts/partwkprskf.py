@@ -28,6 +28,7 @@ def process_text(text, speaker_info=''):
         text = text.replace(match.group(0), newnums[sind]+content)
     if speaker_info:
         name_dict = dict(re.findall(r'\{\{([^|]+)\|([^}]+)\}\}', speaker_info))
+        name_dict.update({key.lower(): value for key, value in name_dict.items()})
         speakers = [
             ';'.join(name_dict[name.strip()] for name in item.split(','))
             for item in speakers

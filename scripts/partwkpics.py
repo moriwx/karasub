@@ -69,57 +69,130 @@ def generate_color_image(colors, outputfile, offseta=0, offsetb=0):
             pixels[x, y] = color
     img.save(outputfile)
 
-# input_path = 'E://Pictures//ACGN//PJSK//Q25//'
-input_path = 'E://Pictures//ACGN//profiles//'
+input_path = 'E://Pictures//ACGN//PJSK//Qln//' # Qln
+# input_path = 'E://Pictures//ACGN//profiles//'
 image_extension = '.png'
-image_size = (256, 256) # (400, 400) # (128, 128)
-output_path = 'E://Videos//nicokara//251222starmine//'
+image_size = (400, 400) # (256,256) # (128, 128)
+output_path = 'E://Videos//nicokara//260507hoshi//'
 # char_zh = 'KAITO；星乃一歌；天马咲希；望月穗波；日野森志步'.split('；')
-# char_zh = ['リン', '奏', 'まふゆ', '絵名', '瑞希']
-# char_en = ['rin', 'knd', 'mfy', 'ena', 'mzk']
-char_zh = ['佑芽', '美鈴', '星南']
-char_en = ['hume', 'hmsz', 'jsna']
+char_zh = ['レン', '一歌', '咲希', '穂波', '志歩']
+char_en = ['len', 'ick', 'saki', 'hnm', 'shiho']
+
+if 'gakumas':
+    char_ja_gakumas = ['咲季', '手毬', 'ことね', 'リーリヤ', '清夏',
+        '千奈', '広', '佑芽', '美鈴',
+        '麻央', '莉波', '星南']
+    char_en_gakumas = ['hski', 'ttmr', 'fktn', 'kllj', 'ssmk',
+        'kcna', 'shro', 'hume', 'hmsz',
+        'amao', 'hrnm', 'jsna']
+    color_gakumas = ['#EA4A5B', '#4FA0CE', '#FAD356', '#EFFDFF', '#A2FD47',
+        '#F8AC5E', '#48C6DA', '#EF8472', '#A0B6DC',
+        '#A453A6', '#F9C4D6', '#F9C584']
+
+# char_zh = char_ja_gakumas
+# char_en = char_en_gakumas
 # char_en = ['KAFU', 'SEKAI', 'RIME', 'COKO', 'HARU']
 # char_en = ['KAF', 'KAFU', 'ISEKAI', 'SEKAI', 'RIM', 'RIME', 'KOKO', 'COKO', 'HARUS', 'HARU']
 char_all_en = ['miku', 'rin', 'len', 'luka', 'mei', 'kai', 'ick', 'saki', 'hnm', 'shiho', 'mnr', 'hrk', 'airi', 'szk',
                'khn', 'an', 'akt', 'toya', 'tks', 'emu', 'nene', 'rui', 'knd', 'mfy', 'ena', 'mzk']
 char_all_ja = ['ミク', 'リン', 'レン', 'ルカ', 'MEIKO', 'KAITO', '一歌', '咲希', '穂波', '志歩', 'みのり', '遥', '愛莉', '雫',
                'こはね', '杏', '彰人', '冬弥', '司', 'えむ', '寧々', '類', '奏', 'まふゆ', '絵名', '瑞希']
-char_all_zh = ['ミク', 'リン', 'レン', 'ルカ', 'MEIKO', 'KAITO', '星乃一歌', '天马咲希', '望月穗波', '日野森志步', 'みのり', '遥', '愛莉', '雫',
-               'こはね', '杏', '彰人', '冬弥', '司', 'えむ', '寧々', '類', 'knd', 'mfy', 'ena', 'mzk']
+# char_all_zh = ['ミク', 'リン', 'レン', 'ルカ', 'MEIKO', 'KAITO', '星乃一歌', '天马咲希', '望月穗波', '日野森志步', 'みのり', '遥', '愛莉', '雫',
+#                'こはね', '杏', '彰人', '冬弥', '司', 'えむ', '寧々', '類', 'knd', 'mfy', 'ena', 'mzk']
 # color_rgb = {'miku':(51, 204, 187), 'len':(255,238,17), 'mei':(221,68,68),
 #     'khn':(255, 102, 153), 'an':(0, 187, 221), 'akt':(255, 119, 34), 'toya':(0, 119, 221),
 #     'knd':(187,102,136), 'mfy':(136,136,204), 'ena':(204,170,136), 'mzk':(221,170,204)}
-main_fontsize = 90
+main_fontsize = 97.5 # 90
 zoom_scale = 80
+char_zh_to_idx = {name: idx for idx, name in enumerate(char_zh)}
 
 speakers = 'KAITO；星乃一歌；天马咲希；望月穗波；日野森志步；合唱；KAITO、星乃一歌；天马咲希、望月穗波、日野森志步；KAITO、星乃一歌、天马咲希、望月穗波、日野森志步'.replace('、',';').split('；')
-speakers = ['リン;絵名', 'リン;まふゆ', 'リン;奏;瑞希', 'まふゆ;絵名;瑞希', 'リン;奏;まふゆ;絵名', 'リン;奏;まふゆ;瑞希', 'リン;奏', 'リン;まふゆ;瑞希', '奏;絵名;瑞希',
-'リン;奏;絵名;瑞希', 'リン;瑞希', '奏', '絵名', '瑞希', 'まふゆ', 'リン']
+speakers = ['レン;一歌;咲希;穂波;志歩', '一歌;穂波', '穂波;志歩', '咲希;穂波', '一歌;咲希;穂波;志歩',
+    '穂波', '志歩', '咲希', '一歌', 'レン', '咲希;穂波_志歩', '一歌;穂波_咲希', '穂波;志歩_一歌']
 
 if __name__=='__main__':
-    # for i in ['KAF', 'ISEKAI', 'RIM', 'KOKO', 'HARUS']:
-    #     crop_to_inscribed_circle(output_path+i+'.jpg', output_path+i+'.png')
-    for length in range(len(char_en)):
-        # if length in (1,2,3): continue
-        for combo in itertools.combinations(range(len(char_en)), length+1):
-            if 1: # ';'.join([char_zh[i] for i in combo]) in speakers: # 1
-                images = [Image.open(input_path+f"{char_en[i]}{image_extension}").convert("RGBA").resize(image_size)
-                         for i in combo]
+    for pattern in speakers:
+        if '_' in pattern:  # main_chorus
+            main_part, harmony_part = pattern.split('_', 1)
+            main_names = main_part.split(';')
+            harmony_names = harmony_part.split(';')
+            
+            main_indices = [char_zh_to_idx[name] for name in main_names if name in char_zh_to_idx]
+            harmony_indices = [char_zh_to_idx[name] for name in harmony_names if name in char_zh_to_idx]
+            
+            if not main_indices or not harmony_indices:
+                print(f"跳过无效模式: {pattern}")
+                continue
+            
+            # 加载主旋律图片（原尺寸）
+            main_images = []
+            for i in main_indices:
+                img = Image.open(input_path + f"{char_en[i]}{image_extension}").convert("RGBA")
+                img = img.resize(image_size)
+                main_images.append(img)
+            
+            # 加载和声图片并缩放到70%
+            scale = 0.7
+            harmony_images = []
+            for i in harmony_indices:
+                img = Image.open(input_path + f"{char_en[i]}{image_extension}").convert("RGBA")
+                img = img.resize(image_size)
+                new_size = (int(img.width * scale), int(img.height * scale))
+                img_resized = img.resize(new_size)
+                harmony_images.append(img_resized)
+            
+            # 计算画布尺寸
+            main_total_w = sum(img.width for img in main_images)
+            harmony_total_w = sum(img.width for img in harmony_images)
+            canvas_w = main_total_w + harmony_total_w
+            canvas_h = image_size[1]
+            canvas = Image.new('RGBA', (canvas_w, canvas_h), (0, 0, 0, 0))
+            
+            # 放置主旋律（顶部对齐）
+            x = 0
+            for img in main_images:
+                canvas.paste(img, (x, 0), mask=img)
+                x += img.width
+            
+            # 放置和声（底部对齐）
+            for img in harmony_images:
+                y = canvas_h - img.height
+                canvas.paste(img, (x, y), mask=img)
+                x += img.width
+            
+            # 生成文件名
+            main_en = ''.join([char_en[i] for i in main_indices])
+            harmony_en = ''.join([char_en[i] for i in harmony_indices])
+            filename = f"{main_en}_{harmony_en}.png"
+            canvas.save(output_path + filename)
+            print(f"@Emoji=【{pattern}】,{filename},,Zoom={zoom_scale}%,NoDecor"+ \
+                f",MarginRight=-999,MarginBottom={-main_fontsize*zoom_scale/100-2}")
+            
+        else:  # main
+            names = pattern.split(';')
+            indices = [char_zh_to_idx[name] for name in names if name in char_zh_to_idx]
+            
+            if not indices:
+                print(f"跳过无效模式: {pattern}")
+                continue
+            # for combo in itertools.combinations(range(len(char_en)), length+1): # permutations
+            #     if ';'.join([char_zh[i] for i in combo]) in speakers:
+            images = []
+            for i in indices:
+                img = Image.open(input_path + f"{char_en[i]}{image_extension}").convert("RGBA")
+                img = img.resize(image_size)
+                images.append(img)
+            
+            # 创建画布
+            canvas = Image.new('RGBA', (image_size[0] * len(indices), image_size[1]), (0, 0, 0, 0))
+            x = 0
+            for img in images:
+                canvas.paste(img, (x, 0), mask=img)
+                x += img.width
+            
+            filename = f"{''.join([char_en[i] for i in indices])}.png"
+            canvas.save(output_path + filename)
+            print(f"@Emoji=【{pattern}】,{filename},,Zoom={zoom_scale}%,NoDecor"+ \
+                f",MarginRight=-999,MarginBottom={-main_fontsize*zoom_scale/100-2}")
 
-                canvas = Image.new('RGBA', (image_size[0] * len(combo), image_size[1]), (0, 0, 0, 0))
-                
-                x_offset = 0
-                for img in images:
-                    canvas.paste(img, (x_offset, 0), mask=img)
-                    x_offset += img.width
-                
-                filename = f"{''.join([char_en[i] for i in combo])}.png"
-                canvas.save(output_path+filename) # 角色拼图
-                # if length == 0:
-                #     generate_color_image([color_rgb[char_en[i]] for i in combo], output_path+'color//'+filename, 0, -10) # 单色图
-                # print(f"@Emoji=【{';'.join([char_zh[i] for i in combo])}】,{filename},,NoDecor,MarginRight=15,MarginBottom=15") # 中插
-                print(f"@Emoji=【{';'.join([char_zh[i] for i in combo])}】,{filename},,Zoom={zoom_scale}%,NoDecor"+ \
-                    f",MarginRight=-999,MarginBottom={-main_fontsize*zoom_scale/100-2}") # canvas.width/canvas.height*98*zoom_scale/100 # 下插
-    print(f"@Emoji=【合唱】,{filename},,Zoom={zoom_scale}%,NoDecor,MarginRight=-999,MarginBottom={-main_fontsize*zoom_scale/100-2}")
-    # crop_to_inscribed_circle(output_path+'channels4_profile.jpg', output_path+'2.png') # 裁圆
+    # crop_to_inscribed_circle(output_path+'1.png', output_path+'2.png') # 裁圆

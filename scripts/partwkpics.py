@@ -77,17 +77,22 @@ output_path = 'E://Videos//nicokara//260507hoshi//'
 # char_zh = 'KAITO；星乃一歌；天马咲希；望月穗波；日野森志步'.split('；')
 char_zh = ['レン', '一歌', '咲希', '穂波', '志歩']
 char_en = ['len', 'ick', 'saki', 'hnm', 'shiho']
+# char_zh = ['KAITO', 'こはね', '杏', '彰人', '冬弥']
+# char_en = ['kai', 'khn', 'an', 'akt', 'toya']
 
 if 'gakumas':
     char_ja_gakumas = ['咲季', '手毬', 'ことね', 'リーリヤ', '清夏',
         '千奈', '広', '佑芽', '美鈴',
         '麻央', '莉波', '星南']
+        '麻央', '莉波', '星南', '燕']
     char_en_gakumas = ['hski', 'ttmr', 'fktn', 'kllj', 'ssmk',
         'kcna', 'shro', 'hume', 'hmsz',
         'amao', 'hrnm', 'jsna']
+        'amao', 'hrnm', 'jsna', 'atbm']
     color_gakumas = ['#EA4A5B', '#4FA0CE', '#FAD356', '#EFFDFF', '#A2FD47',
         '#F8AC5E', '#48C6DA', '#EF8472', '#A0B6DC',
         '#A453A6', '#F9C4D6', '#F9C584']
+        '#A453A6', '#F9C4D6', '#F9C584', '']
 
 # char_zh = char_ja_gakumas
 # char_en = char_en_gakumas
@@ -97,6 +102,7 @@ char_all_en = ['miku', 'rin', 'len', 'luka', 'mei', 'kai', 'ick', 'saki', 'hnm',
                'khn', 'an', 'akt', 'toya', 'tks', 'emu', 'nene', 'rui', 'knd', 'mfy', 'ena', 'mzk']
 char_all_ja = ['ミク', 'リン', 'レン', 'ルカ', 'MEIKO', 'KAITO', '一歌', '咲希', '穂波', '志歩', 'みのり', '遥', '愛莉', '雫',
                'こはね', '杏', '彰人', '冬弥', '司', 'えむ', '寧々', '類', '奏', 'まふゆ', '絵名', '瑞希']
+
 # char_all_zh = ['ミク', 'リン', 'レン', 'ルカ', 'MEIKO', 'KAITO', '星乃一歌', '天马咲希', '望月穗波', '日野森志步', 'みのり', '遥', '愛莉', '雫',
 #                'こはね', '杏', '彰人', '冬弥', '司', 'えむ', '寧々', '類', 'knd', 'mfy', 'ena', 'mzk']
 # color_rgb = {'miku':(51, 204, 187), 'len':(255,238,17), 'mei':(221,68,68),

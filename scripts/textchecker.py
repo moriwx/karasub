@@ -348,7 +348,6 @@ if __name__=='__main__':
 
 満天の空へ'''
 
-    a = re.sub(r"【\S+】", "", a)
     a = re.sub(r"\[(\d+:\d+:\d+)\]", "", a)
     a = re.sub(r"\[(\d+:\d+:\d+)\]", "", a) # ^\[[0-9:]+\]
     filename = create_char_level_html_diff(a, b)

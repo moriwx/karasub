@@ -83,15 +83,12 @@ char_en = ['len', 'ick', 'saki', 'hnm', 'shiho']
 if 'gakumas':
     char_ja_gakumas = ['咲季', '手毬', 'ことね', 'リーリヤ', '清夏',
         '千奈', '広', '佑芽', '美鈴',
-        '麻央', '莉波', '星南']
         '麻央', '莉波', '星南', '燕']
     char_en_gakumas = ['hski', 'ttmr', 'fktn', 'kllj', 'ssmk',
         'kcna', 'shro', 'hume', 'hmsz',
-        'amao', 'hrnm', 'jsna']
         'amao', 'hrnm', 'jsna', 'atbm']
     color_gakumas = ['#EA4A5B', '#4FA0CE', '#FAD356', '#EFFDFF', '#A2FD47',
         '#F8AC5E', '#48C6DA', '#EF8472', '#A0B6DC',
-        '#A453A6', '#F9C4D6', '#F9C584']
         '#A453A6', '#F9C4D6', '#F9C584', '']
 
 # char_zh = char_ja_gakumas
@@ -103,6 +100,8 @@ char_all_en = ['miku', 'rin', 'len', 'luka', 'mei', 'kai', 'ick', 'saki', 'hnm',
 char_all_ja = ['ミク', 'リン', 'レン', 'ルカ', 'MEIKO', 'KAITO', '一歌', '咲希', '穂波', '志歩', 'みのり', '遥', '愛莉', '雫',
                'こはね', '杏', '彰人', '冬弥', '司', 'えむ', '寧々', '類', '奏', 'まふゆ', '絵名', '瑞希']
 
+char_zh = char_all_ja
+char_en = char_all_en
 # char_all_zh = ['ミク', 'リン', 'レン', 'ルカ', 'MEIKO', 'KAITO', '星乃一歌', '天马咲希', '望月穗波', '日野森志步', 'みのり', '遥', '愛莉', '雫',
 #                'こはね', '杏', '彰人', '冬弥', '司', 'えむ', '寧々', '類', 'knd', 'mfy', 'ena', 'mzk']
 # color_rgb = {'miku':(51, 204, 187), 'len':(255,238,17), 'mei':(221,68,68),
@@ -113,8 +112,28 @@ zoom_scale = 80
 char_zh_to_idx = {name: idx for idx, name in enumerate(char_zh)}
 
 speakers = 'KAITO；星乃一歌；天马咲希；望月穗波；日野森志步；合唱；KAITO、星乃一歌；天马咲希、望月穗波、日野森志步；KAITO、星乃一歌、天马咲希、望月穗波、日野森志步'.replace('、',';').split('；')
-speakers = ['レン;一歌;咲希;穂波;志歩', '一歌;穂波', '穂波;志歩', '咲希;穂波', '一歌;咲希;穂波;志歩',
-    '穂波', '志歩', '咲希', '一歌', 'レン', '咲希;穂波_志歩', '一歌;穂波_咲希', '穂波;志歩_一歌']
+speakers = ['みのり', 'ミク;みのり;遥;愛莉;雫', '雫', 'ミク', '遥', '愛莉', 'ミク;愛莉',
+'遥;愛莉;雫', 'みのり;遥;愛莉;雫', '遥;愛莉', 'みのり;雫', '愛莉;雫', 'みのり;遥', 'ミク;みのり']
+speakers = '''KAITO
+冬弥
+冬弥;KAITO_咲希
+冬弥;瑞希
+冬弥;類;KAITO
+冬弥;類;KAITO_咲希;瑞希
+咲希
+咲希;KAITO
+咲希;冬弥
+咲希;冬弥;類;瑞希;KAITO
+咲希;瑞希
+咲希;類
+瑞希
+瑞希;KAITO
+類
+類;KAITO_瑞希
+類;瑞希'''.splitlines()
+# speakers = ['咲季', '手毬', 'ことね', 'リーリヤ', '清夏',
+#         '千奈', '広', '佑芽', '美鈴', '手毬;美鈴', '千奈;広', '麻央;莉波', 'ことね;燕',
+#         '麻央', '莉波', '星南', '燕']
 
 if __name__=='__main__':
     for pattern in speakers:

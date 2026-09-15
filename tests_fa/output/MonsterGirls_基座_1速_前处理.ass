@@ -1,0 +1,82 @@
+[Script Info]
+ScriptType: v4.00+
+YCbCr Matrix: TV.601
+PlayResX: 1920
+PlayResY: 1080
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Source Han Serif,71,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,1.99999,1.99999,2,11,11,101,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:06.00,0:00:08.93,Default,,0,0,0,karaoke,{\k20}{\k203}我{\k9}们{\k7}是“{\k16}Mon{\k6}ster{\k0} {\k12}girls”{\k20}
+Dialogue: 0,0:00:08.53,0:00:09.53,Default,,0,0,0,karaoke,{\k20}{\k9}我{\k21}们{\k6}是“{\k7}Mon{\k5}ster{\k0} {\k12}girls”{\k20}
+Dialogue: 0,0:00:09.15,0:00:11.25,Default,,0,0,0,karaoke,{\k20}{\k15}さ{\k1}あ{\k0} {\k29}Ride{\k2} {\k23}on{\k2} {\k12}ev{\k22}ery{\k64}body!{\k20}
+Dialogue: 0,0:00:10.87,0:00:14.59,Default,,0,0,0,karaoke,{\k20}{\k32}新|<し{\k14}#|ん{\k25}時|<じ{\k34}代|<だ{\k11}#|い{\k2} {\k6}We{\k2} {\k15}are{\k2} {\k17}the{\k2} “{\k43}Mon{\k27}ster{\k2} {\k98}girls”{\k20}
+Dialogue: 0,0:00:15.49,0:00:18.24,Default,,0,0,0,karaoke,{\k20}{\k32}さ{\k14}あ{\k2} {\k31}Go{\k2} {\k19}on{\k2} {\k20}ev{\k19}ery{\k94}body!{\k20}
+Dialogue: 0,0:00:18.26,0:00:22.54,Default,,0,0,0,karaoke,{\k20}{\k25}更|<さ{\k23}#|ら{\k23}な{\k22}る{\k2} {\k23}New{\k2} {\k41}world{\k2} {\k30}We{\k2} {\k12}are{\k2} {\k14}the{\k2} {\k163}stars!{\k20}
+Dialogue: 0,0:00:22.21,0:00:26.11,Default,,0,0,0,karaoke,{\k20}{\k18}就{\k30}从{\k27}现{\k21}在{\k34}开{\k23}始.{\k81}. {\k20}谁{\k26}也{\k22}阻{\k24}拦{\k20}不{\k4}住!{\k0}!{\k20}
+Dialogue: 0,0:00:25.71,0:00:26.73,Default,,0,0,0,karaoke,{\k20}{\k4}You{\k0} {\k15}know{\k6} {\k11}who{\k8} {\k4}it{\k6} {\k8}is{\k20}
+Dialogue: 0,0:00:26.55,0:00:27.71,Default,,0,0,0,karaoke,{\k20}{\k23}我{\k5}们{\k6}是“{\k8}Mon{\k11}ster{\k2} {\k21}girls”{\k20}
+Dialogue: 0,0:00:27.33,0:00:28.16,Default,,0,0,0,karaoke,{\k20}{\k24}Mon{\k19}ster…{\k20}
+Dialogue: 0,0:00:45.06,0:00:48.88,Default,,0,0,0,karaoke,{\k20}{\k24}こ{\k20}の{\k24}世|<せ{\k38}界|<か{\k10}#|い{\k20}は{\k26}ま{\k44}る{\k38}で{\k10}サ{\k36}バ{\k8}イ{\k14}バ{\k30}ル{\k20}
+Dialogue: 0,0:00:48.50,0:00:50.50,Default,,0,0,0,karaoke,{\k20}{\k26}谁{\k14}能{\k32}留{\k32}在{\k12}舞{\k22}台{\k22}上？{\k20}
+Dialogue: 0,0:00:50.12,0:00:51.32,Default,,0,0,0,karaoke,{\k20}{\k16}Say!{\k0} {\k12}loud!{\k2} {\k12}loud!{\k0} {\k28}loud!{\k2} {\k8}loud!{\k20}
+Dialogue: 0,0:00:50.92,0:00:55.56,Default,,0,0,0,karaoke,{\k20}{\k14}目|<め{\k12}が{\k12}眩|<く{\k12}#|ら{\k20}む{\k8}程|<ほ{\k4}#|ど{\k2} {\k6}Su{\k18}per{\k2} {\k58}cute{\k4} & {\k252}cool{\k20}
+Dialogue: 0,0:00:55.20,0:00:56.26,Default,,0,0,0,karaoke,{\k20}{\k24}聞|<き{\k18}か{\k8}せ{\k16}て{\k20}
+Dialogue: 0,0:00:55.88,0:00:57.88,Default,,0,0,0,karaoke,{\k20}{\k26}谁{\k14}能{\k32}留{\k34}在{\k12}舞{\k22}台{\k20}上？{\k20}
+Dialogue: 0,0:00:57.50,0:01:00.02,Default,,0,0,0,karaoke,{\k20}{\k22}Say!{\k2} {\k46}loud!{\k2} {\k44}loud!{\k2} {\k44}loud!{\k2} {\k48}loud!{\k20}
+Dialogue: 0,0:00:59.64,0:01:04.53,Default,,0,0,0,karaoke,{\k20}{\k48}トッ{\k10}プ{\k8}ス{\k46}ピー{\k46}ド{\k22}で{\k22}駆|<か{\k38}け{\k32}上|<あ{\k28}が{\k18}る{\k24}こ{\k22}の{\k26}リ{\k18}ズ{\k41}ム{\k20}
+Dialogue: 0,0:01:04.44,0:01:06.74,Default,,0,0,0,karaoke,{\k20}{\k26}振|<ふ{\k30}り{\k12}落|<お{\k22}と{\k26}さ{\k24}れ{\k28}な{\k8}い{\k3}よ{\k3}う{\k4}に{\k4}ね？{\k20}
+Dialogue: 0,0:01:06.34,0:01:08.35,Default,,0,0,0,karaoke,{\k20}{\k17}我{\k25}们{\k19}的{\k71}时{\k29}代{\k20}
+Dialogue: 0,0:01:07.95,0:01:11.49,Default,,0,0,0,karaoke,{\k20}{\k20}Ain’{\k39}t{\k2} {\k24}no{\k49}body{\k2} {\k12}out{\k33}strip{\k2} {\k16}us,{\k2} {\k22}ba{\k89}by{\k20}
+Dialogue: 0,0:01:11.11,0:01:13.33,Default,,0,0,0,karaoke,{\k20}{\k12}fol{\k31}low,{\k2} {\k16}fol{\k30}low{\k2} {\k11}me{\k2} {\k76}now{\k20}
+Dialogue: 0,0:01:13.66,0:01:14.76,Default,,0,0,0,karaoke,{\k20}{\k26}か{\k18}ま{\k26}せ！{\k20}
+Dialogue: 0,0:01:14.38,0:01:17.82,Default,,0,0,0,karaoke,{\k20}{\k157}Mon{\k25}ster{\k2} {\k8}girls!{\k0}! {\k3}最|<さ{\k9}#|い{\k24}速|<そ{\k26}#|く{\k18}で{\k1}味|<あ{\k28}わ{\k3}う{\k20}
+Dialogue: 0,0:01:17.44,0:01:22.16,Default,,0,0,0,karaoke,{\k20}{\k6}Mon{\k9}ster{\k2} {\k43}girls!{\k2}! {\k172}今日|<きょ{\k36}#|う{\k19}の{\k9}オ{\k14}イ{\k39}シ{\k11}イ{\k22}と{\k23}こ{\k25}ろ{\k20}
+Dialogue: 0,0:01:21.78,0:01:27.66,Default,,0,0,0,karaoke,{\k20}{\k36}Mon{\k10}ster{\k2} {\k108}girls!{\k2}! {\k46}君|<き{\k24}#|み{\k20}の{\k69}heart{\k69}も{\k25}捕|<つ{\k25}#|か{\k30}ま{\k14}え{\k34}ちゃ{\k34}う{\k20}
+Dialogue: 0,0:01:27.54,0:01:30.20,Default,,0,0,0,karaoke,{\k20}{\k27}Hold{\k2} {\k17}on!{\k1} {\k21}離|<は{\k22}#|な{\k23}さ{\k37}な{\k10}い{\k66}わ{\k20}
+Dialogue: 0,0:01:29.82,0:01:33.76,Default,,0,0,0,karaoke,{\k20}{\k16}高|<た{\k6}#|か{\k26}ま{\k18}る{\k2} {\k28}Bring{\k0} {\k42}the{\k2} {\k214}noise{\k20}
+Dialogue: 0,0:01:33.38,0:01:35.90,Default,,0,0,0,karaoke,{\k20}{\k16}震|<ふ{\k24}#|る{\k17}わ{\k27}せ{\k14}る{\k2} {\k51}Speak{\k45}ers{\k2} “{\k8}boom!{\k0} {\k6}boom!{\k0}”{\k20}
+Dialogue: 0,0:01:35.51,0:01:42.39,Default,,0,0,0,karaoke,{\k20}{\k7}Mon{\k22}ster{\k2} {\k163}girls!{\k69}! {\k44}君|<き{\k24}#|み{\k28}の{\k63}heart{\k69}も{\k25}捕|<つ{\k22}#|か{\k31}ま{\k16}え{\k34}ちゃ{\k29}う{\k20}
+Dialogue: 0,0:01:42.32,0:01:51.90,Default,,0,0,0,karaoke,{\k20}{\k48}Hold{\k2} {\k24}on{\k2} {\k236}離|<は{\k582}#|な{\k4}さ{\k4}な{\k2}い{\k14}わ{\k20}
+Dialogue: 0,0:01:51.50,0:01:55.38,Default,,0,0,0,karaoke,{\k20}{\k22}時|<と{\k26}#|き{\k22}に{\k36}不|<ふ{\k12}意|<い{\k18}を{\k26}つ{\k46}く{\k43}こ{\k45}の{\k5}ス{\k11}タ{\k28}イ{\k8}ル{\k20}
+Dialogue: 0,0:01:55.00,0:01:56.55,Default,,0,0,0,karaoke,{\k20}{\k14}我{\k32}想{\k22}给{\k19}你{\k23}惊{\k5}喜{\k20}
+Dialogue: 0,0:01:56.15,0:01:57.26,Default,,0,0,0,karaoke,{\k20}{\k11}Like{\k0} {\k2}a{\k0} {\k2}Elec{\k10}tron{\k22}ic{\k0} {\k24}flash!{\k0}!{\k20}
+Dialogue: 0,0:01:56.86,0:02:00.14,Default,,0,0,0,karaoke,{\k20}{\k6}In{\k0} {\k10}a{\k2} {\k6}mo{\k10}ment{\k0} {\k4}最|<さ{\k2}#|い{\k32}強|<きょ{\k14}#|う{\k12}の{\k10}イ{\k21}ン{\k9}パ{\k60}ク{\k90}ト{\k20}
+Dialogue: 0,0:02:01.76,0:02:02.76,Default,,0,0,0,karaoke,{\k20}{\k16}イ{\k16}カ{\k6}し{\k14}て{\k8}る{\k20}
+Dialogue: 0,0:02:02.36,0:02:04.14,Default,,0,0,0,karaoke,{\k20}{\k14}我{\k34}想{\k24}给{\k20}你{\k20}惊{\k26}喜{\k20}
+Dialogue: 0,0:02:03.76,0:02:06.50,Default,,0,0,0,karaoke,{\k20}{\k26}Like{\k2} {\k12}a{\k2} {\k2}Elec{\k42}tron{\k96}ic{\k0} {\k52}flash!{\k0}!{\k20}
+Dialogue: 0,0:02:06.10,0:02:11.09,Default,,0,0,0,karaoke,{\k20}{\k64}次|<つ{\k46}#|ぎ{\k56}の{\k14}獲|<え{\k26}物|<も{\k21}#|の{\k23}は{\k22}こ{\k26}こ{\k32}に{\k14}あ{\k19}る{\k25}み{\k30}た{\k41}い{\k20}
+Dialogue: 0,0:02:10.90,0:02:13.16,Default,,0,0,0,karaoke,{\k20}{\k24}在{\k24}那{\k22}里{\k33}等{\k37}我{\k46}吧♡{\k20}
+Dialogue: 0,0:02:12.78,0:02:17.99,Default,,0,0,0,karaoke,{\k20}{\k21}響|<ひ{\k21}#|び{\k23}く{\k50}サ{\k18}イ{\k35}レ{\k7}ン{\k2}　{\k49}さ{\k1}あ{\k38}声|<こ{\k8}#|え{\k22}を{\k25}聞|<き{\k16}か{\k5}せ{\k24}て{\k26}ba{\k90}by{\k20}
+Dialogue: 0,0:02:17.61,0:02:19.90,Default,,0,0,0,karaoke,{\k20}{\k18}We{\k2} {\k23}are{\k1} {\k18}We{\k2} {\k29}are{\k1} {\k9}the{\k2} {\k84}one!{\k20}
+Dialogue: 0,0:02:20.14,0:02:21.13,Default,,0,0,0,karaoke,{\k20}{\k23}鳴|<な{\k23}ら{\k13}せ！{\k20}
+Dialogue: 0,0:02:20.75,0:02:24.90,Default,,0,0,0,karaoke,{\k20}{\k15}Mon{\k6}ster{\k0} {\k148}girls!{\k2}! {\k44}ツ{\k26}メ{\k20}痕|<あ{\k24}#|と{\k24}が{\k20}光|<ひ{\k26}#|か{\k20}る{\k20}
+Dialogue: 0,0:02:24.52,0:02:30.92,Default,,0,0,0,karaoke,{\k20}{\k40}Mon{\k52}ster{\k40} {\k9}girls!{\k0}! {\k18}未|<み{\k38}体|<た{\k11}#|い{\k12}験|<け{\k44}#|ん{\k38}エ{\k30}リ{\k15}ア{\k253}に{\k20}
+Dialogue: 0,0:02:30.54,0:02:32.77,Default,,0,0,0,karaoke,{\k20}{\k26}Mon{\k16}ster{\k2} {\k16}girls!{\k0}! {\k8}君|<き{\k6}#|み{\k6}を{\k14}誘|<さ{\k27}#|そ{\k3}お{\k32}う{\k4}何|<な{\k2}#|ん{\k4}度|<ど{\k14}だっ{\k3}て{\k20}
+Dialogue: 0,0:02:32.37,0:02:33.28,Default,,0,0,0,karaoke,{\k20}{\k5}も{\k7}う{\k9}戻|<も{\k9}#|ど{\k8}れ{\k5}な{\k1}い{\k7}わ{\k20}
+Dialogue: 0,0:02:32.90,0:02:38.04,Default,,0,0,0,karaoke,{\k20}{\k12}Can’{\k4}t{\k0} {\k14}stop{\k0} {\k3}the{\k0} {\k167}feel{\k272}ing.{\k0}.{\k20}
+Dialogue: 0,0:02:37.66,0:02:39.22,Default,,0,0,0,karaoke,{\k20}{\k15}Can’{\k5}t{\k1} {\k25}stop{\k2} {\k18}the{\k2} {\k26}feel{\k22}ing.{\k0}.{\k20}
+Dialogue: 0,0:02:38.84,0:02:42.00,Default,,0,0,0,karaoke,{\k20}{\k226}谁{\k26}也{\k4}阻{\k9}拦{\k6}不{\k5}住{\k20}
+Dialogue: 0,0:02:41.61,0:02:42.04,Default,,0,0,0,karaoke,{\k20}{\k3}Ah.{\k0}.!{\k20}
+Dialogue: 0,0:02:41.66,0:02:44.99,Default,,0,0,0,karaoke,{\k20}{\k7}圧|<あっ{\k5}倒|<と{\k6}#|う{\k8}的|<て{\k10}#|き{\k14}存|<そ{\k14}#|ん{\k7}在|<ざ{\k15}#|い{\k118}感|<か{\k89}#|ん{\k20}
+Dialogue: 0,0:02:44.61,0:02:47.98,Default,,0,0,0,karaoke,{\k20}{\k12}飼|<か{\k79}い{\k132}な{\k3}ら{\k9}す{\k12}こ{\k3}と{\k23}は{\k8}で{\k6}き{\k4}な{\k2}い{\k4}わ{\k20}
+Dialogue: 0,0:02:47.60,0:02:48.60,Default,,0,0,0,karaoke,{\k20}{\k6}Lev{\k6}el{\k1} {\k5}up!{\k0} {\k3}Lev{\k9}el{\k0} {\k6}up!{\k2} {\k7}Lev{\k7}el{\k2} {\k6}up!{\k20}
+Dialogue: 0,0:02:48.20,0:02:58.54,Default,,0,0,0,karaoke,{\k20}{\k8}さ{\k56}ら{\k197}に{\k24}こ{\k25}こ{\k298}か{\k14}ら{\k206}加|<か{\k12}速|<そ{\k11}#|く{\k1}　{\k9}止|<と{\k12}ま{\k11}ら{\k16}な{\k5}い{\k12}進|<し{\k11}#|ん{\k66}化|<か{\k20}
+Dialogue: 0,0:03:00.11,0:03:05.84,Default,,0,0,0,karaoke,{\k20}{\k14}一{\k23}起{\k38}跳{\k12}舞{\k22}吧！{\k2}({\k113}Let’{\k14}s{\k0} {\k10}go){\k20}
+Dialogue: 0,0:03:05.46,0:03:07.80,Default,,0,0,0,karaoke,{\k20}{\k12}一{\k115}起{\k29}唱{\k3}吧！{\k0}({\k18}Right{\k2} {\k15}now){\k20}
+Dialogue: 0,0:03:07.42,0:03:08.60,Default,,0,0,0,karaoke,{\k20}{\k18}Stand{\k0} {\k6}on{\k1} {\k17}top{\k3} {\k7}We{\k2} {\k8}can{\k0} {\k12}take{\k0} {\k4}it{\k20}
+Dialogue: 0,0:03:08.20,0:03:09.38,Default,,0,0,0,karaoke,{\k20}{\k5}野|<の{\k5}放|<は{\k6}#|な{\k6}し{\k17}は{\k2} {\k19}Dan{\k4}ger.{\k0}. {\k9}Dan{\k5}ger.{\k0}.{\k20}
+Dialogue: 0,0:03:08.98,0:03:10.88,Default,,0,0,0,karaoke,{\k20}{\k6}Put{\k0} {\k6}your{\k0} {\k25}hands{\k2} {\k5}in{\k0} {\k6}the{\k0} {\k10}air!{\k2} {\k1}今|<い{\k19}#|ま{\k28}ひ{\k3}と{\k6}つ{\k5}に{\k20}な{\k6}る{\k20}
+Dialogue: 0,0:03:10.48,0:03:13.60,Default,,0,0,0,karaoke,{\k20}{\k22}Hands{\k0} {\k3}in{\k0} {\k5}the{\k0} {\k10}air!{\k2} {\k38}Come{\k2} {\k12}on{\k0} {\k7}最|<さ{\k35}#|い{\k21}後|<ご{\k25}ま{\k90}で{\k20}
+Dialogue: 0,0:03:13.67,0:03:14.30,Default,,0,0,0,karaoke,{\k20}{\k13}か{\k6}ま{\k4}せ！{\k20}
+Dialogue: 0,0:03:13.90,0:03:20.05,Default,,0,0,0,karaoke,{\k20}{\k24}Mon{\k18}ster{\k2} {\k43}girls!{\k121}! {\k36}最|<さ{\k9}#|い{\k23}速|<そ{\k26}#|く{\k75}で{\k38}味|<あ{\k147}わ{\k13}う{\k20}
+Dialogue: 0,0:03:19.67,0:03:22.06,Default,,0,0,0,karaoke,{\k20}{\k31}Mon{\k14}ster{\k2} {\k23}girls!{\k0}! {\k9}今日|<きょ{\k2}#|う{\k6}の{\k1}オ{\k3}イ{\k32}シ{\k15}イ{\k25}と{\k24}こ{\k12}ろ{\k20}
+Dialogue: 0,0:03:21.66,0:03:27.69,Default,,0,0,0,karaoke,{\k20}{\k50}Mon{\k6}ster{\k0} {\k112}girls!{\k2}! {\k45}君|<き{\k24}#|み{\k25}の{\k68}heart{\k66}も{\k26}捕|<つ{\k24}#|か{\k29}ま{\k15}え{\k35}ちゃ{\k36}う{\k20}
+Dialogue: 0,0:03:27.54,0:03:29.98,Default,,0,0,0,karaoke,{\k20}{\k49}Hold{\k2} {\k18}on!{\k0} {\k11}離|<は{\k8}#|な{\k24}さ{\k39}な{\k11}い{\k42}わ{\k20}
+Dialogue: 0,0:03:29.60,0:03:33.75,Default,,0,0,0,karaoke,{\k20}{\k24}高|<た{\k21}#|か{\k25}ま{\k20}る{\k2} {\k71}Bring{\k2} {\k7}the{\k2} {\k201}noise{\k20}
+Dialogue: 0,0:03:33.37,0:03:35.93,Default,,0,0,0,karaoke,{\k20}{\k17}震|<ふ{\k21}#|る{\k21}わ{\k26}せ{\k13}る{\k2} {\k53}Speak{\k45}ers{\k2} “{\k6}boom!{\k0} {\k10}boom!{\k0}”{\k20}
+Dialogue: 0,0:03:35.55,0:03:42.38,Default,,0,0,0,karaoke,{\k20}{\k18}Mon{\k7}ster{\k1} {\k164}girls!{\k65}! {\k50}君|<き{\k21}#|み{\k24}の{\k68}heart{\k67}も{\k27}捕|<つ{\k23}#|か{\k30}ま{\k16}え{\k30}ちゃ{\k32}う{\k20}
+Dialogue: 0,0:03:42.55,0:03:45.25,Default,,0,0,0,karaoke,{\k20}{\k25}Hold{\k0} {\k22}on{\k0} {\k6}離|<は{\k12}#|な{\k23}さ{\k38}な{\k11}い{\k93}わ{\k20}

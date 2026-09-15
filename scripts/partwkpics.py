@@ -69,14 +69,12 @@ def generate_color_image(colors, outputfile, offseta=0, offsetb=0):
             pixels[x, y] = color
     img.save(outputfile)
 
-input_path = 'E://Pictures//ACGN//PJSK//Qln//' # Qln
+input_path = 'E://Pictures//ACGN//PJSK//wl//'
 # input_path = 'E://Pictures//ACGN//profiles//'
 image_extension = '.png'
 image_size = (400, 400) # (256,256) # (128, 128)
-output_path = 'E://Videos//nicokara//260507hoshi//'
+output_path = 'E://Videos//nicokara//260730remu//'
 # char_zh = 'KAITO；星乃一歌；天马咲希；望月穗波；日野森志步'.split('；')
-char_zh = ['レン', '一歌', '咲希', '穂波', '志歩']
-char_en = ['len', 'ick', 'saki', 'hnm', 'shiho']
 # char_zh = ['KAITO', 'こはね', '杏', '彰人', '冬弥']
 # char_en = ['kai', 'khn', 'an', 'akt', 'toya']
 
@@ -220,4 +218,4 @@ if __name__=='__main__':
             print(f"@Emoji=【{pattern}】,{filename},,Zoom={zoom_scale}%,NoDecor"+ \
                 f",MarginRight=-999,MarginBottom={-main_fontsize*zoom_scale/100-2}")
 
-    # crop_to_inscribed_circle(output_path+'1.png', output_path+'2.png') # 裁圆
+    # crop_to_inscribed_circle(output_path+'faf1ac4ade528ad2.png', output_path+'4.png') # 裁圆

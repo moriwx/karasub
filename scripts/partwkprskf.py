@@ -39,67 +39,44 @@ def process_text(text, speaker_info=''):
 if __name__=='__main__':
     lrcstr = """
 
-{{Kanade|途方もない時間だけ
-また過ぎていく}}
-{{multiccAlt|Rin 25, Ena|此処は理想郷では無い ましてや}}
-{{Ena|描いた未来じゃ無い}}
 
-{{Mizuki|終わりのない未来など
-なんて下らない}}
-{{multiccAlt|Rin 25, Mafuyu|夢の隙間に問う
-私は何処へと}} {{Mafuyu|行くの}}
+{{Toya|ずっと前のこと 今更、思い出してさ}}
+{{Rui|暗闇へ手を伸ばしても虚しいだけ}}
+{{Mizuki|君のような優しい人の}}　{{KAITO|隣にはきっと僕ではない}}
+{{Saki|誰かが 相応しいんだろう}}
 
-{{multiccAlt|Rin 25, Kanade, Mizuki|遠い遠い先の方へ}}
-{{Rin 25|痛みと歩いていた}}
-{{multiccAlt|Mafuyu, Ena, Mizuki|騒がしい街の声が}}
-{{Ena|頭に響く}}
+{{multiccAlt|KAITO, Mizuki|最近ね。嫌な夢ばっかり見るんだよ}}
+{{multiccAlt|KAITO, Saki|曖昧な痛みが胸を締め付けるんだよ}}
+{{multiccAlt|Rui, Mizuki|君のことを考えて飲み込んだ言葉も}}
+{{multiccAlt|Saki, Toya|愛しくて仕方ないんだ 笑っておくれよ
 
-{{multiccAlt|Rin 25, Kanade, Mafuyu, Ena|夢の底でもがくのなら}}
-{{Ena|この夜をいっそ喰らってしまいたい}}
+うー}}
 
-{{multiccAlt|Rin 25, Kanade, Mafuyu, Mizuki|呆れる程に傍にいて}}
-{{Mizuki|愚かでいい}} {{Kanade|二度と無い}}
-{{multiccAlt|Rin 25, Ena|今を生きていたいだけ}}
-{{Ena|それだけだ}}
+{{Rui|きっと今日のこと これから思い出しては}}
+{{KAITO|醜さを抱えながら眠りにつくだろう}}
+{{Saki|君のような正しい人の}}　{{Toya|隣にはきっと僕ではない}}
+{{Mizuki|誰かが相応しいんだろう}}
 
-{{Mafuyu|救いのない話なら
-とうに聞き飽きた}}
-{{multiccAlt|Rin 25, Kanade|それを優しさと言って絆すなら}}
-{{Kanade|余計馬鹿らしい}}
+{{multiccAlt|Saki, Toya, Rui, Mizuki|なんてさ、わかっているのに
+おー}}
 
-{{Mizuki|偽りないうつつなら
-なんて気儘だろう}}
-{{multiccAlt|Rin 25, Ena|夢の隙間に問う
-私は何処へと}}{{Ena|行くの}}
+{{multiccAlt|KAITO, Mizuki|最近ね。嫌な夢ばっかり見るんだよ}}
+{{multiccAlt|Toya, Mizuki|曖昧な痛みが胸を締め付けるんだよ}}
+{{multiccAlt|KAITO, Saki|君のことを考えて飲み込んだ言葉も}}
+{{multiccAlt|Saki, Rui|愛しくて仕方ないんだ 笑っておくれよ}}
 
-{{multiccAlt|Rin 25, Mafuyu, Mizuki|暗い暗い闇の方へ}}
-{{Rin 25|ふと目を向ける度に}}
-{{multiccAlt|Kanade, Ena, Mizuki|下らない言葉達が}}
-{{Ena|心を満たす}}
+{{multiccAlt|KAITO, Toya, Rui|君のこと}}　{{multiccAlt|Saki, Mizuki|あなたのこと}}
+{{multiccAlt|Rui, Mizuki|少しでも}}{{multiccAlt|Saki, Toya|（少しでも）}}{{multiccAlt|KAITO, Saki, Toya, Rui, Mizuki|分かってあげたらよかった
+綺麗事を数えるほど傷付いた心も
+愛しくて仕方ないんだ 笑っておくれよ
 
-{{multiccAlt|Rin 25, Kanade, Mafuyu, Mizuki|夢の途中で目覚めたなら}}
-{{Mafuyu|この夜は一層濁ってしまうだろう}}
+うー}}
 
-{{multiccAlt|Rin 25, Kanade, Ena, Mizuki|触れた指が解けぬように}}
-{{Mizuki|今はただ}} {{Ena|願うまま}}
-{{multiccAlt|Rin 25, Ena|日々を過ごしていたいだけ}}
 
-{{Ena|それなのに}}{{Kanade|曖昧}}{{multiccAlt|Rin 25, Kanade|な温かさで}}
-{{Mafuyu|淡い理想に}}{{multiccAlt|Rin 25, Mafuyu|魅入られてしまう}}
-{{Mizuki|心ひとつ吐き}}{{multiccAlt|Rin 25, Mizuki|出せないくせに}}
-{{Ena|身勝手な私だ}}
-
-{{multiccAlt|Rin 25, Kanade, Mafuyu, Ena|夢の底でもがくのなら}}
-{{Ena|この夜をいっそ喰らってしまいたい}}
-
-{{multiccAlt|Rin 25, Kanade, Mafuyu, Mizuki|呆れる程に傍にいて}}
-{{Mizuki|愚かでいい}} {{Kanade|二度と無い}}
-{{multiccAlt|Rin 25, Ena|今を生きていたいだけ}}
-{{Ena|それだけだ}}
 
 
 """
-    str1, spk1 = process_text(lrcstr, '''{{Rin 25|リン}} • {{Kanade|奏}} • {{Mafuyu|まふゆ}} • {{Ena|絵名}} • {{Mizuki|瑞希}}''')
+    str1, spk1 = process_text(lrcstr, '''{{KAITO|KAITO}} • {{Saki|咲希}} • {{Toya|冬弥}} • {{Rui|類}} • {{Mizuki|瑞希}}''')
     # print(str1)
 
 #     str1='''
